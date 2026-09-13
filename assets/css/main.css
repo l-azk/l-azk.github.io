@@ -363,18 +363,10 @@ a {
     border-top: 1px solid var(--line);
 }
 
-/*
-  The final project does not need another
-  full block of whitespace underneath it.
-*/
 .project:last-child {
     padding-bottom: 0;
 }
 
-/*
-  Research already contains internal project spacing,
-  so we only need a modest final buffer.
-*/
 #research {
     padding-bottom: var(--space-small);
 }
@@ -464,8 +456,32 @@ a {
 
 .shadow-project-title h3 {
     width: 100%;
+    max-width: none;
 
     font-size: clamp(3.5rem, 5vw, 5.5rem);
+}
+
+
+/* =========================
+   SHADOWS PROJECT QUESTION
+========================= */
+
+/*
+  The research question sits above the text/image
+  grid and can therefore use the full content width.
+*/
+.shadow-project-question {
+    max-width: 1100px;
+
+    margin:
+        0
+        0
+        var(--space-medium)
+        var(--content-inset);
+}
+
+.shadow-project-question .project-question {
+    max-width: 1050px;
 }
 
 
@@ -473,6 +489,11 @@ a {
    SHADOWS PROJECT MAIN
 ========================= */
 
+/*
+  Once the question has spanned the page,
+  the project divides into explanatory text
+  on the left and the stimulus on the right.
+*/
 .shadow-project-main {
     display: grid;
 
@@ -487,8 +508,8 @@ a {
     margin-left: var(--content-inset);
 }
 
-.shadow-project-copy .project-question {
-    margin-bottom: var(--space-medium);
+.shadow-project-copy {
+    min-width: 0;
 }
 
 .shadow-project-copy .project-body {
@@ -610,10 +631,32 @@ a {
 
 
 /* =========================
-   EDITORIAL PROJECTS
+   TEXT RESEARCH PROJECTS
 ========================= */
 
-.editorial-project-grid {
+/*
+  Projects without images use the same title
+  hierarchy as the Shadows project.
+*/
+.text-project-title {
+    margin:
+        0
+        0
+        var(--space-large)
+        var(--content-inset);
+}
+
+.text-project-title h3 {
+    width: 100%;
+    max-width: none;
+}
+
+
+/*
+  The project question sits on the left and
+  explanatory text sits on the right.
+*/
+.text-project-main {
     display: grid;
 
     grid-template-columns:
@@ -627,26 +670,12 @@ a {
     margin-left: var(--content-inset);
 }
 
-.editorial-project-title {
+.text-project-question {
     min-width: 0;
 }
 
-.editorial-project h3 {
-    max-width: 8ch;
-}
-
-.editorial-project-content {
+.text-project-body {
     width: 100%;
-    max-width: 620px;
-
-    padding-top: 0.25rem;
-}
-
-.editorial-project-content .project-question {
-    margin-bottom: var(--space-medium);
-}
-
-.editorial-project-content .project-body {
     max-width: 620px;
 }
 
@@ -718,10 +747,6 @@ a {
     font-size: 0.95rem;
 }
 
-/*
-  Prevent a large empty block below the
-  final presentation before the footer.
-*/
 #presentations {
     padding-bottom: var(--space-small);
 }
@@ -793,9 +818,12 @@ a {
 
 @media (max-width: 950px) {
 
+    /*
+      Two-column layouts collapse into one column.
+    */
     .about-hero-profile,
     .shadow-project-main,
-    .editorial-project-grid {
+    .text-project-main {
         grid-template-columns: 1fr;
 
         gap: var(--space-medium);
@@ -803,12 +831,19 @@ a {
         margin-left: 0;
     }
 
+
+    /*
+      Remove the desktop 100px inset.
+    */
     .project-meta-simple,
     .shadow-project-title,
+    .shadow-project-question,
+    .text-project-title,
     .stimulus-selector,
     .presentation-list {
         margin-left: 0;
     }
+
 
     .about-hero-photo {
         max-width: 580px;
@@ -816,15 +851,23 @@ a {
         justify-self: start;
     }
 
+
     .about-hero-copy {
         max-width: 680px;
     }
 
-    .editorial-project h3 {
-        max-width: none;
+
+    .shadow-project-question {
+        max-width: 900px;
     }
 
-    .editorial-project-content {
+    .shadow-project-question .project-question {
+        max-width: 900px;
+    }
+
+
+    .shadow-project-copy .project-body,
+    .text-project-body {
         max-width: 680px;
     }
 
@@ -844,6 +887,8 @@ a {
     }
 
 
+    /* NAVIGATION */
+
     .site-nav {
         padding: 1rem 1.25rem;
 
@@ -860,12 +905,16 @@ a {
     }
 
 
+    /* PAGE PADDING */
+
     .about-hero-inner,
     .section {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
 
+
+    /* SECTION HEADINGS */
 
     .about-hero-heading,
     .section-heading {
@@ -885,6 +934,8 @@ a {
     }
 
 
+    /* ABOUT */
+
     .about-hero-profile {
         gap: var(--space-medium);
     }
@@ -903,6 +954,8 @@ a {
         font-size: 1.3rem;
     }
 
+
+    /* PROJECTS */
 
     .project {
         padding:
@@ -924,19 +977,31 @@ a {
     }
 
 
-    .shadow-project-title {
+    .shadow-project-title,
+    .text-project-title {
         margin-bottom: var(--space-medium);
     }
 
     .shadow-project-title h3,
-    .editorial-project h3 {
+    .text-project-title h3 {
         font-size: clamp(3.3rem, 14vw, 5.2rem);
+    }
+
+
+    /*
+      The Shadows question remains separate from
+      the text/image grid on mobile.
+    */
+    .shadow-project-question {
+        margin-bottom: var(--space-medium);
     }
 
     .project-question {
         font-size: clamp(2rem, 9vw, 3rem);
     }
 
+
+    /* SHADOW CONTROLS */
 
     .stimulus-selector {
         grid-template-columns: 1fr;
@@ -959,12 +1024,16 @@ a {
     }
 
 
+    /* PRESENTATIONS */
+
     .presentation-item {
         grid-template-columns: 1fr;
 
         gap: 0.75rem;
     }
 
+
+    /* FOOTER */
 
     .footer-content {
         flex-direction: column;
