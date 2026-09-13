@@ -4,28 +4,60 @@ title:
 ---
 
 <!-- =========================================
-     HERO
+     ABOUT / HERO
 ========================================== -->
 
-<section class="hero">
+<section id="about" class="about-hero">
 
-    <div class="hero-inner">
+    <div class="about-hero-inner">
 
-        <p class="eyebrow">
-            Psychology · Cognition · Human–AI Interaction
-        </p>
+        <div class="about-hero-heading">
 
-        <h1 class="hero-title">
-            I study visual cognition and human–AI interaction.
-        </h1>
+            <p class="section-number">
+                About
+            </p>
 
-        <p class="hero-intro">
-            I’m Albert Z.K. Li, a psychology researcher at the University of British Columbia.
-            I’m interested in how the mind organizes what we see, and in what happens when AI becomes part of the way we
-            think, communicate, and make decisions. My current research ranges from asking how the visual system
-            represents the relationship between objects and their shadows to studying how AI shapes interpersonal
-            judgment and communication.
-        </p>
+            <h1 class="about-hero-title">
+                I study visual cognition and human–AI interaction.
+            </h1>
+
+        </div>
+
+
+        <div class="about-hero-profile">
+
+            <div class="about-hero-photo">
+
+                <img src="{{ '/assets/images/albert-li.png' | relative_url }}" alt="Albert Z.K. Li">
+
+            </div>
+
+
+            <div class="about-hero-copy">
+
+                <p>
+                    I’m a fourth-year Psychology student at the University of British Columbia.
+                    I’m interested in how the mind organizes what we see, and in what happens
+                    when AI becomes part of the way we think, communicate, and make decisions.
+                </p>
+
+                <p>
+                    More broadly, I’m drawn to questions about how people make sense of
+                    information and how the tools we use can shape that process. My work
+                    currently approaches these questions from both visual cognition and
+                    human–AI interaction.
+                </p>
+
+                <p class="about-personal">
+                    Beyond research, I spend much of my time training for triathlons,
+                    mountain biking, and snowboarding. Lately, I’ve also been getting
+                    interested in shooting little moments on a camcorder and learning
+                    how to edit them into short videos.
+                </p>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -52,100 +84,109 @@ title:
 
 
     <!-- =========================================
-       SHADOWS & OBJECTHOOD
-  ========================================== -->
+         SHADOWS & OBJECTHOOD
+    ========================================== -->
 
-    <article class="project project-interactive reveal">
+    <article class="project shadow-project reveal">
 
-        <div class="project-interactive-copy">
+        <div class="project-meta-simple">
 
-            <div class="project-meta-simple">
+            <p>
+                Perception & Cognition Lab · UBC
+            </p>
 
-                <p>
-                    Perception & Cognition Lab · UBC
-                </p>
+            <p>
+                July 2025–present
+            </p>
 
-                <p>
-                    July 2025–present
-                </p>
+        </div>
 
-            </div>
+
+        <div class="shadow-project-title">
 
             <p class="project-label">
                 Visual cognition · Object perception
             </p>
 
             <h3>
-                Shadows &<br>
-                Objecthood
+                Shadows & Objecthood
             </h3>
 
-            <p class="project-question">
-                What counts as part of an object?
-            </p>
+        </div>
 
-            <div class="project-body">
 
-                <p>
-                    A cast shadow is caused by an object and moves with it, yet visually it often
-                    appears to be something separate: a dark region lying across another surface.
-                    This makes shadows a useful case for asking how the visual system decides
-                    where one object ends and something else begins.
+        <div class="shadow-project-main">
+
+            <div class="shadow-project-copy">
+
+                <p class="project-question">
+                    What counts as part of an object?
                 </p>
 
-                <p>
-                    My work asks whether attention treats a cast shadow as part of its casting
-                    object, as an independent object-like region, or as something in between.
-                    I approach this using object-based attention paradigms that let us test
-                    whether perceptual processing crosses the apparent boundary between an
-                    object and its shadow.
-                </p>
+                <div class="project-body">
+
+                    <p>
+                        A cast shadow is caused by an object and moves with it, yet visually it often
+                        appears to be something separate: a dark region lying across another surface.
+                        This makes shadows a useful case for asking how the visual system decides
+                        where one object ends and something else begins.
+                    </p>
+
+                    <p>
+                        My work asks whether attention treats a cast shadow as part of its casting
+                        object, as an independent object-like region, or as something in between.
+                        I approach this using object-based attention paradigms that let us test
+                        whether perceptual processing crosses the apparent boundary between an
+                        object and its shadow.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="stimulus-selector">
+            <div class="stimulus-stage">
 
-                <button class="stimulus-button active"
-                    data-image="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
-                    data-caption="Object → shadow">
-                    <span>01</span>
-                    Object + shadow
-                </button>
+                <img id="shadow-stimulus" src="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
+                    alt="Experimental stimulus from the shadows and objecthood project.">
 
-                <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderSOS.png' | relative_url }}"
-                    data-caption="Two shadows">
-                    <span>02</span>
-                    Two shadows
-                </button>
+                <div class="stimulus-caption">
 
-                <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}"
-                    data-caption="Control condition">
-                    <span>03</span>
-                    Control
-                </button>
+                    <span id="stimulus-caption-text">
+                        Object → shadow
+                    </span>
+
+                    <span>
+                        Experimental stimulus
+                    </span>
+
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="stimulus-stage">
+        <div class="stimulus-selector">
 
-            <img id="shadow-stimulus" src="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
-                alt="Experimental stimulus from the shadows and objecthood project.">
+            <button class="stimulus-button active"
+                data-image="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
+                data-caption="Object → shadow">
+                <span>01</span>
+                Object + shadow
+            </button>
 
-            <div class="stimulus-caption">
+            <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderSOS.png' | relative_url }}"
+                data-caption="Two shadows">
+                <span>02</span>
+                Two shadows
+            </button>
 
-                <span id="stimulus-caption-text">
-                    Object → shadow
-                </span>
-
-                <span>
-                    Experimental stimulus
-                </span>
-
-            </div>
+            <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}"
+                data-caption="Control condition">
+                <span>03</span>
+                Control
+            </button>
 
         </div>
 
@@ -153,8 +194,8 @@ title:
 
 
     <!-- =========================================
-       AI & ROMANTIC RELATIONSHIPS
-  ========================================== -->
+         AI & ROMANTIC RELATIONSHIPS
+    ========================================== -->
 
     <article class="project editorial-project reveal">
 
@@ -173,7 +214,7 @@ title:
 
         <div class="editorial-project-grid">
 
-            <div>
+            <div class="editorial-project-title">
 
                 <p class="project-label">
                     Human–AI interaction · Social cognition
@@ -221,8 +262,8 @@ title:
 
 
     <!-- =========================================
-       AI & APOLOGIES
-  ========================================== -->
+         AI & APOLOGIES
+    ========================================== -->
 
     <article class="project editorial-project reveal">
 
@@ -241,7 +282,7 @@ title:
 
         <div class="editorial-project-grid">
 
-            <div>
+            <div class="editorial-project-title">
 
                 <p class="project-label">
                     Human–AI interaction · Social cognition
@@ -288,8 +329,8 @@ title:
 
 
     <!-- =========================================
-       VISUAL CORRELATION
-  ========================================== -->
+         VISUAL CORRELATION
+    ========================================== -->
 
     <article class="project editorial-project reveal">
 
@@ -308,7 +349,7 @@ title:
 
         <div class="editorial-project-grid">
 
-            <div>
+            <div class="editorial-project-title">
 
                 <p class="project-label">
                     Visual cognition · Information perception
@@ -355,10 +396,10 @@ title:
 
 
 <!-- =========================================
-     PUBLICATIONS
+     PRESENTATIONS
 ========================================== -->
 
-<section id="publications" class="section">
+<section id="presentations" class="section">
 
     <div class="section-heading reveal">
 
@@ -367,37 +408,38 @@ title:
         </p>
 
         <h2>
-            Publications & Presentations
+            Presentations
         </h2>
 
     </div>
 
 
-    <div class="publication-list reveal">
+    <div class="presentation-list reveal">
 
-        <p class="publication-status">
+        <p class="presentation-status">
             Selected work
         </p>
 
-        <article class="publication-item">
 
-            <p class="publication-year">
+        <article class="presentation-item">
+
+            <p class="presentation-year">
                 2026
             </p>
 
             <div>
 
-                <p class="publication-title">
+                <p class="presentation-title">
                     When two become one: A “same-object advantage” that spans across
                     shadows and their casting objects.
                 </p>
 
-                <p class="publication-details">
+                <p class="presentation-details">
                     Albert Z.K. Li, Dominic Alford-Duguid, & Joan D.K. Ongchoco
                 </p>
 
-                <p class="publication-venue">
-                    Vision Sciences Society
+                <p class="presentation-venue">
+                    Talk · Vision Sciences Society
                 </p>
 
             </div>
@@ -405,96 +447,29 @@ title:
         </article>
 
 
-        <article class="publication-item">
+        <article class="presentation-item">
 
-            <p class="publication-year">
+            <p class="presentation-year">
                 2026
             </p>
 
             <div>
 
-                <p class="publication-title">
+                <p class="presentation-title">
                     Shadows as derivative individuals.
                 </p>
 
-                <p class="publication-details">
+                <p class="presentation-details">
                     Albert Z.K. Li, Dominic Alford-Duguid, & Joan D.K. Ongchoco
                 </p>
 
-                <p class="publication-venue">
-                    Society for Philosophy and Psychology
+                <p class="presentation-venue">
+                    Talk · Society for Philosophy and Psychology
                 </p>
 
             </div>
 
         </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     ABOUT
-========================================== -->
-
-<section id="about" class="section">
-
-    <div class="section-heading reveal">
-
-        <p class="section-number">
-            03
-        </p>
-
-        <h2>
-            About
-        </h2>
-
-    </div>
-
-
-    <div class="about-statement reveal">
-
-        <p>
-            I’m interested in the boundaries between how people perceive the world
-            and how technologies increasingly help shape that experience.
-        </p>
-
-    </div>
-
-
-    <div class="about-profile">
-
-        <div class="about-photo reveal">
-
-            <img src="{{ '/assets/images/albert-li.png' | relative_url }}" alt="Albert Z.K. Li">
-
-        </div>
-
-
-        <div class="about-copy reveal">
-
-            <p>
-                I’m a psychology student and researcher at the University of British Columbia.
-                My research began in visual cognition, where I became interested in deceptively
-                simple questions about how the mind organizes visual experience—such as whether
-                a shadow is represented together with the object that casts it.
-            </p>
-
-            <p>
-                More recently, I’ve become interested in human–AI interaction. In particular,
-                I want to understand what happens as AI moves from being a tool we deliberately
-                consult to something that participates in ordinary reasoning, communication,
-                and social life.
-            </p>
-
-            <p>
-                Across these areas, I’m drawn to questions where our intuitions about how
-                perception or technology “should” work come apart from how people actually
-                experience and use them.
-            </p>
-
-        </div>
 
     </div>
 
