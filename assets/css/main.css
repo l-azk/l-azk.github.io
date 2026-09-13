@@ -14,6 +14,14 @@
     --content-inset: 100px;
 
     --column-gap: clamp(2.5rem, 3.5vw, 4rem);
+
+    /*
+      Minimum readable text size across the site.
+      Secondary information should be distinguished
+      through colour, weight, spacing, etc. rather
+      than by making it tiny.
+    */
+    --body-size: 1.05rem;
 }
 
 
@@ -45,6 +53,7 @@ body {
         Arial,
         sans-serif;
 
+    font-size: var(--body-size);
     line-height: 1.5;
 
     -webkit-font-smoothing: antialiased;
@@ -88,7 +97,7 @@ a {
 }
 
 .site-name {
-    font-size: 0.95rem;
+    font-size: var(--body-size);
     font-weight: 600;
 
     letter-spacing: -0.02em;
@@ -101,7 +110,7 @@ a {
 }
 
 .nav-links a {
-    font-size: 0.85rem;
+    font-size: var(--body-size);
 
     transition:
         opacity 0.25s ease,
@@ -436,7 +445,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.85rem;
+    font-size: var(--body-size);
 }
 
 .section-heading h2 {
@@ -486,7 +495,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.8rem;
+    font-size: var(--body-size);
 }
 
 .project-meta-simple p {
@@ -498,11 +507,11 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.75rem;
+    font-size: var(--body-size);
     font-weight: 500;
 
     text-transform: uppercase;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.07em;
 }
 
 .project h3 {
@@ -528,7 +537,7 @@ a {
 .project-body {
     color: var(--muted);
 
-    font-size: 1.05rem;
+    font-size: var(--body-size);
 
     line-height: 1.6;
     letter-spacing: -0.01em;
@@ -699,11 +708,10 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.7rem;
+    font-size: var(--body-size);
     font-weight: 500;
 
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.005em;
 }
 
 
@@ -748,7 +756,7 @@ a {
     color: var(--muted);
 
     font: inherit;
-    font-size: 0.9rem;
+    font-size: var(--body-size);
 
     text-align: left;
 
@@ -765,7 +773,7 @@ a {
 }
 
 .stimulus-button span {
-    font-size: 0.75rem;
+    font-size: var(--body-size);
 }
 
 .stimulus-button:hover,
@@ -834,11 +842,11 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.8rem;
+    font-size: var(--body-size);
     font-weight: 500;
 
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
 }
 
 .presentation-item {
@@ -871,7 +879,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.85rem;
+    font-size: var(--body-size);
 }
 
 .presentation-title {
@@ -892,7 +900,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.95rem;
+    font-size: var(--body-size);
 }
 
 #presentations {
@@ -941,7 +949,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 0.85rem;
+    font-size: var(--body-size);
 }
 
 .footer-content {
@@ -1090,7 +1098,7 @@ a {
     .about-hero-copy {
         max-width: none;
 
-        font-size: 1.05rem;
+        font-size: var(--body-size);
     }
 
     .about-hero-copy p:first-child {
