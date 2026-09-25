@@ -394,6 +394,25 @@ a {
     border-top: 1px solid var(--line);
 }
 
+.about-personal .personal-link {
+    color: var(--text);
+
+    text-decoration-line: underline;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+
+    transition:
+        text-decoration-color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.about-personal .personal-link:hover {
+    text-decoration-color: var(--text);
+
+    opacity: 0.65;
+}
+
 
 /* =========================
    HERO ANIMATIONS
