@@ -7,107 +7,107 @@ const heroHeading = document.querySelector(".about-hero-heading");
 
 
 if (
-  heroTitle &&
-  heroHeading &&
-  window.matchMedia("(hover: hover) and (pointer: fine)").matches
+    heroTitle &&
+    heroHeading &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches
 ) {
 
-  heroHeading.addEventListener("mousemove", (event) => {
+    heroHeading.addEventListener("mousemove", (event) => {
 
-    const rect = heroHeading.getBoundingClientRect();
-
-
-    const mouseX =
-      (event.clientX - rect.left) / rect.width;
-
-    const mouseY =
-      (event.clientY - rect.top) / rect.height;
+        const rect = heroHeading.getBoundingClientRect();
 
 
-    /*
-      Convert cursor position from 0–1
-      into a range from -1 to 1.
-    */
+        const mouseX =
+            (event.clientX - rect.left) / rect.width;
 
-    const normalizedX =
-      (mouseX - 0.5) * 2;
-
-    const normalizedY =
-      (mouseY - 0.5) * 2;
+        const mouseY =
+            (event.clientY - rect.top) / rect.height;
 
 
-    /*
-      Keep the shadow close to the original text.
-      It still moves opposite the cursor, as though
-      the cursor were the light source.
-    */
+        /*
+          Convert cursor position from 0–1
+          into a range from -1 to 1.
+        */
 
-    const shadowX =
-      5 - normalizedX * 8;
+        const normalizedX =
+            (mouseX - 0.5) * 2;
 
-    const shadowY =
-      5 - normalizedY * 6;
-
-
-    /*
-      The shadow becomes slightly more visible
-      as the cursor moves away from the centre.
-    */
-
-    const distance =
-      Math.min(
-        1,
-        Math.sqrt(
-          normalizedX * normalizedX +
-          normalizedY * normalizedY
-        )
-      );
+        const normalizedY =
+            (mouseY - 0.5) * 2;
 
 
-    const opacity =
-      0.09 + distance * 0.04;
+        /*
+          Keep the shadow close to the original text.
+          It still moves opposite the cursor, as though
+          the cursor were the light source.
+        */
+
+        const shadowX =
+            5 - normalizedX * 8;
+
+        const shadowY =
+            5 - normalizedY * 6;
 
 
-    heroTitle.style.setProperty(
-      "--hero-shadow-x",
-      `${shadowX}px`
-    );
+        /*
+          The shadow becomes slightly more visible
+          as the cursor moves away from the centre.
+        */
+
+        const distance =
+            Math.min(
+                1,
+                Math.sqrt(
+                    normalizedX * normalizedX +
+                    normalizedY * normalizedY
+                )
+            );
 
 
-    heroTitle.style.setProperty(
-      "--hero-shadow-y",
-      `${shadowY}px`
-    );
+        const opacity =
+            0.09 + distance * 0.04;
 
 
-    heroTitle.style.setProperty(
-      "--hero-shadow-opacity",
-      opacity
-    );
-
-  });
+        heroTitle.style.setProperty(
+            "--hero-shadow-x",
+            `${shadowX}px`
+        );
 
 
-  heroHeading.addEventListener("mouseleave", () => {
-
-    heroTitle.style.setProperty(
-      "--hero-shadow-x",
-      "5px"
-    );
+        heroTitle.style.setProperty(
+            "--hero-shadow-y",
+            `${shadowY}px`
+        );
 
 
-    heroTitle.style.setProperty(
-      "--hero-shadow-y",
-      "5px"
-    );
+        heroTitle.style.setProperty(
+            "--hero-shadow-opacity",
+            opacity
+        );
+
+    });
 
 
-    heroTitle.style.setProperty(
-      "--hero-shadow-opacity",
-      "0.11"
-    );
+    heroHeading.addEventListener("mouseleave", () => {
 
-  });
+        heroTitle.style.setProperty(
+            "--hero-shadow-x",
+            "5px"
+        );
+
+
+        heroTitle.style.setProperty(
+            "--hero-shadow-y",
+            "5px"
+        );
+
+
+        heroTitle.style.setProperty(
+            "--hero-shadow-opacity",
+            "0.11"
+        );
+
+    });
 
 }
 
@@ -118,80 +118,80 @@ if (
 ========================================= */
 
 const stimulusButtons =
-  document.querySelectorAll(".stimulus-button");
+    document.querySelectorAll(".stimulus-button");
 
 
 const stimulusImage =
-  document.getElementById("shadow-stimulus");
+    document.getElementById("shadow-stimulus");
 
 
 const stimulusCaption =
-  document.getElementById("stimulus-caption-text");
+    document.getElementById("stimulus-caption-text");
 
 
 function changeStimulus(button) {
 
-  if (!stimulusImage || !stimulusCaption) {
-    return;
-  }
+    if (!stimulusImage || !stimulusCaption) {
+        return;
+    }
 
 
-  const newImage =
-    button.dataset.image;
+    const newImage =
+        button.dataset.image;
 
 
-  const newCaption =
-    button.dataset.caption;
+    const newCaption =
+        button.dataset.caption;
 
 
-  stimulusButtons.forEach((item) => {
+    stimulusButtons.forEach((item) => {
 
-    item.classList.remove("active");
+        item.classList.remove("active");
 
-  });
-
-
-  button.classList.add("active");
+    });
 
 
-  stimulusImage.classList.add("changing");
+    button.classList.add("active");
 
 
-  setTimeout(() => {
-
-    stimulusImage.src =
-      newImage;
+    stimulusImage.classList.add("changing");
 
 
-    stimulusCaption.textContent =
-      newCaption;
+    setTimeout(() => {
+
+        stimulusImage.src =
+            newImage;
 
 
-    stimulusImage.onload = () => {
+        stimulusCaption.textContent =
+            newCaption;
 
-      stimulusImage.classList.remove("changing");
 
-    };
+        stimulusImage.onload = () => {
 
-  }, 200);
+            stimulusImage.classList.remove("changing");
+
+        };
+
+    }, 200);
 
 }
 
 
 stimulusButtons.forEach((button) => {
 
-  button.addEventListener("mouseenter", () => {
+    button.addEventListener("mouseenter", () => {
 
-    changeStimulus(button);
+        changeStimulus(button);
 
-  });
+    });
 
 
-  button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
 
-    changeStimulus(button);
+        changeStimulus(button);
 
-  });
+    });
 
 });
 
@@ -202,40 +202,41 @@ stimulusButtons.forEach((button) => {
 ========================================= */
 
 const revealElements =
-  document.querySelectorAll(".reveal");
+    document.querySelectorAll(".reveal");
 
 
 const revealObserver =
-  new IntersectionObserver(
+    new IntersectionObserver(
 
-    (entries) => {
+        (entries) => {
 
-      entries.forEach((entry) => {
+            entries.forEach((entry) => {
 
-        if (entry.isIntersecting) {
+                if (entry.isIntersecting) {
 
-          entry.target.classList.add("visible");
+                    entry.target.classList.add("visible");
 
 
-          revealObserver.unobserve(
-            entry.target
-          );
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
         }
 
-      });
-
-    },
-
-    {
-      threshold: 0.12
-    }
-
-  );
+    );
 
 
 revealElements.forEach((element) => {
 
-  revealObserver.observe(element);
+    revealObserver.observe(element);
+
 
 });
