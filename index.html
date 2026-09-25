@@ -30,7 +30,10 @@ title:
 
             <div class="about-hero-photo">
 
-                <img src="{{ '/assets/images/albert-li.png' | relative_url }}" alt="Albert Z.K. Li">
+                <img
+                    src="{{ '/assets/images/albert-li.png' | relative_url }}"
+                    alt="Albert Z.K. Li"
+                >
 
             </div>
 
@@ -54,14 +57,25 @@ title:
                 </p>
 
                 <p class="about-personal">
-                    Beyond research, I enjoy
-                    <a class="personal-link" href="{{ '/assets/images/expressorockroll.mp4' | relative_url }}"
-                        target="_blank" rel="noopener noreferrer">mountain biking</a>,
-                    <a class="personal-link" href="{{ '/assets/images/redbullhomerun2024.jpg' | relative_url }}"
-                        target="_blank" rel="noopener noreferrer">snowboarding</a>,
-                        and training for
-                    <a class="personal-link" href="{{ '/assets/images/t100sprint2026.jpg' | relative_url }}"
-                        target="_blank" rel="noopener noreferrer">triathlons</a>.
+                    Beyond research, I spend much of my time training for
+                    <a
+                        class="personal-link"
+                        href="{{ '/assets/images/t100sprint2026.jpg' | relative_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >triathlons</a>,
+                    <a
+                        class="personal-link"
+                        href="{{ '/assets/images/expressorockroll.mp4' | relative_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >mountain biking</a>, and
+                    <a
+                        class="personal-link"
+                        href="{{ '/assets/images/redbullhomerun2024.jpg' | relative_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >snowboarding</a>.
                 </p>
 
             </div>
@@ -91,22 +105,17 @@ title:
 
     <article class="project shadow-project reveal">
 
-        <div class="project-meta-simple">
-
-            <p>Perception & Cognition Lab · UBC</p>
-
-            <p>July 2025–present</p>
-
-        </div>
-
-
-        <div class="shadow-project-title">
-
-            <p class="project-label">
-                Visual cognition · Object perception
-            </p>
+        <div class="project-header">
 
             <h3>Shadows & Objecthood</h3>
+
+            <div class="project-meta-simple">
+
+                <p>Perception & Cognition Lab · UBC</p>
+
+                <p>July 2025–present</p>
+
+            </div>
 
         </div>
 
@@ -139,9 +148,16 @@ title:
                         between a shadow and its casting object as if the usual boundary between
                         separate objects is absent, even when the shadow is distorted or physically
                         separated from its object. We suggest that shadows may therefore be
-                        <button class="derivative-individual-trigger" id="derivative-individual-trigger" type="button"
-                            aria-label="Derivative individuals">
-                            <span class="derivative-individual-shadow" aria-hidden="true">
+                        <button
+                            class="derivative-individual-trigger"
+                            id="derivative-individual-trigger"
+                            type="button"
+                            aria-label="Derivative individuals"
+                        >
+                            <span
+                                class="derivative-individual-shadow"
+                                aria-hidden="true"
+                            >
                                 derivative individuals
                             </span>
 
@@ -157,8 +173,11 @@ title:
 
             <div class="stimulus-stage">
 
-                <img id="shadow-stimulus" src="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
-                    alt="Experimental stimulus from the shadows and objecthood project.">
+                <img
+                    id="shadow-stimulus"
+                    src="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
+                    alt="Experimental stimulus from the shadows and objecthood project."
+                >
 
                 <div class="stimulus-caption">
 
@@ -179,24 +198,34 @@ title:
 
         <div class="stimulus-selector">
 
-            <button class="stimulus-button active" data-condition="wall"
+            <button
+                class="stimulus-button active"
+                data-condition="wall"
                 data-image="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
-                data-caption="Shadow projected on wall">
+                data-caption="Shadow projected on wall"
+            >
                 <span>01</span>
                 Shadow Projected on Wall
             </button>
 
 
-            <button class="stimulus-button" data-condition="overlap"
+            <button
+                class="stimulus-button"
+                data-condition="overlap"
                 data-image="{{ '/assets/images/LeftCylinderSOS.png' | relative_url }}"
-                data-caption="Two overlapping shadows">
+                data-caption="Two overlapping shadows"
+            >
                 <span>02</span>
                 Two Overlapping Shadows
             </button>
 
 
-            <button class="stimulus-button" data-condition="mask"
-                data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}" data-caption="Mask control">
+            <button
+                class="stimulus-button"
+                data-condition="mask"
+                data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}"
+                data-caption="Mask control"
+            >
                 <span>03</span>
                 Mask Control
             </button>
@@ -204,11 +233,15 @@ title:
         </div>
 
 
-        <div class="stimulus-easter-egg" id="stimulus-easter-egg" aria-hidden="true">
+        <div
+            class="stimulus-easter-egg"
+            id="stimulus-easter-egg"
+            aria-hidden="true"
+        >
 
             <p class="stimulus-easter-egg-text">
                 <strong>You looked at every condition.</strong>
-                Maybe now you're thinking about shadows too...
+                <em>Maybe now you're thinking about shadows too...</em>
             </p>
 
         </div>
@@ -221,15 +254,31 @@ title:
          DERIVATIVE INDIVIDUAL POPUP
     ========================== -->
 
-    <div class="derivative-popup" id="derivative-popup" aria-hidden="true">
+    <div
+        class="derivative-popup"
+        id="derivative-popup"
+        aria-hidden="true"
+    >
 
-        <div class="derivative-popup-card" role="dialog" aria-modal="true" aria-labelledby="derivative-popup-title">
+        <div
+            class="derivative-popup-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="derivative-popup-title"
+        >
 
-            <p class="derivative-popup-title" id="derivative-popup-title">
+            <p
+                class="derivative-popup-title"
+                id="derivative-popup-title"
+            >
                 You found the derivative individual...
             </p>
 
-            <button class="derivative-popup-button" id="derivative-popup-button" type="button">
+            <button
+                class="derivative-popup-button"
+                id="derivative-popup-button"
+                type="button"
+            >
                 I see.
             </button>
 
@@ -245,22 +294,17 @@ title:
 
     <article class="project text-project reveal">
 
-        <div class="project-meta-simple">
-
-            <p>Social Cognition & Emotion Lab · UBC</p>
-
-            <p>August 2026–present</p>
-
-        </div>
-
-
-        <div class="text-project-title">
-
-            <p class="project-label">
-                Human–AI interaction · Social cognition
-            </p>
+        <div class="project-header">
 
             <h3>AI & Romantic Relationships</h3>
+
+            <div class="project-meta-simple">
+
+                <p>Social Cognition & Emotion Lab · UBC</p>
+
+                <p>August 2026–present</p>
+
+            </div>
 
         </div>
 
@@ -365,14 +409,21 @@ title:
 
                     <div class="chat-bubble ai-bubble">
 
-                        <div class="typing-indicator" id="ai-demo-typing" aria-label="AI is typing">
+                        <div
+                            class="typing-indicator"
+                            id="ai-demo-typing"
+                            aria-label="AI is typing"
+                        >
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
 
 
-                        <p class="ai-response" id="ai-demo-response"></p>
+                        <p
+                            class="ai-response"
+                            id="ai-demo-response"
+                        ></p>
 
                     </div>
 
@@ -383,23 +434,43 @@ title:
 
             <div class="ai-chat-input">
 
-                <button class="ai-chat-input-placeholder" id="fake-chat-input" type="button">
+                <button
+                    class="ai-chat-input-placeholder"
+                    id="fake-chat-input"
+                    type="button"
+                >
                     Message AI...
                 </button>
 
-                <button class="ai-chat-send" id="fake-chat-send" type="button" aria-label="Send message">
+                <button
+                    class="ai-chat-send"
+                    id="fake-chat-send"
+                    type="button"
+                    aria-label="Send message"
+                >
                     ↑
                 </button>
 
             </div>
 
 
-            <div class="fake-chat-popup" id="fake-chat-popup" aria-hidden="true">
+            <div
+                class="fake-chat-popup"
+                id="fake-chat-popup"
+                aria-hidden="true"
+            >
 
-                <div class="fake-chat-popup-card" role="dialog" aria-modal="true"
-                    aria-labelledby="fake-chat-popup-title">
+                <div
+                    class="fake-chat-popup-card"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="fake-chat-popup-title"
+                >
 
-                    <p class="fake-chat-popup-title" id="fake-chat-popup-title">
+                    <p
+                        class="fake-chat-popup-title"
+                        id="fake-chat-popup-title"
+                    >
                         Sorry, this isn't a real chatbox!
                     </p>
 
@@ -407,7 +478,11 @@ title:
                         I don't have the funds for that.
                     </p>
 
-                    <button class="fake-chat-popup-button" id="fake-chat-popup-button" type="button">
+                    <button
+                        class="fake-chat-popup-button"
+                        id="fake-chat-popup-button"
+                        type="button"
+                    >
                         Fair enough
                     </button>
 
@@ -418,13 +493,19 @@ title:
         </div>
 
 
-        <div class="ai-demo-result" id="ai-demo-result">
+        <div
+            class="ai-demo-result"
+            id="ai-demo-result"
+        >
 
             <p class="ai-demo-result-label">
                 You were randomly shown
             </p>
 
-            <p class="ai-demo-condition" id="ai-demo-condition"></p>
+            <p
+                class="ai-demo-condition"
+                id="ai-demo-condition"
+            ></p>
 
             <p class="ai-demo-explanation">
                 In the study, participants are randomly assigned to interact
@@ -432,7 +513,11 @@ title:
                 encourages them to consider their partner’s perspective.
             </p>
 
-            <button class="ai-demo-switch" id="ai-demo-switch" type="button">
+            <button
+                class="ai-demo-switch"
+                id="ai-demo-switch"
+                type="button"
+            >
                 Try the other condition
                 <span aria-hidden="true">→</span>
             </button>
@@ -449,22 +534,17 @@ title:
 
     <article class="project text-project reveal">
 
-        <div class="project-meta-simple">
-
-            <p>Social Cognition & Emotion Lab · UBC</p>
-
-            <p>August 2026–present</p>
-
-        </div>
-
-
-        <div class="text-project-title">
-
-            <p class="project-label">
-                Human–AI interaction · Social cognition
-            </p>
+        <div class="project-header">
 
             <h3>AI & Apologies</h3>
+
+            <div class="project-meta-simple">
+
+                <p>Social Cognition & Emotion Lab · UBC</p>
+
+                <p>August 2026–present</p>
+
+            </div>
 
         </div>
 
@@ -512,22 +592,17 @@ title:
 
     <article class="project text-project reveal">
 
-        <div class="project-meta-simple">
-
-            <p>Visual Cognition Lab · UBC</p>
-
-            <p>March 2025–present</p>
-
-        </div>
-
-
-        <div class="text-project-title">
-
-            <p class="project-label">
-                Visual cognition · Correlation perception
-            </p>
+        <div class="project-header">
 
             <h3>Seeing Correlation</h3>
+
+            <div class="project-meta-simple">
+
+                <p>Visual Cognition Lab · UBC</p>
+
+                <p>March 2025–present</p>
+
+            </div>
 
         </div>
 
