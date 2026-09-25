@@ -15,12 +15,6 @@
 
     --column-gap: clamp(2.5rem, 3.5vw, 4rem);
 
-    /*
-      Minimum readable text size across the site.
-      Secondary information should be distinguished
-      through colour, weight, spacing, etc. rather
-      than by making it tiny.
-    */
     --body-size: 1.05rem;
 }
 
@@ -141,8 +135,7 @@ a {
     margin: 0 auto;
 
     padding:
-        var(--space-section)
-        2rem;
+        var(--space-section) 2rem;
 }
 
 
@@ -154,8 +147,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        var(--content-inset)
-        minmax(0, 1fr);
+        var(--content-inset) minmax(0, 1fr);
 
     margin-bottom: var(--space-large);
 }
@@ -222,22 +214,18 @@ a {
     z-index: 1;
 
     color:
-        rgba(
-            29,
+        rgba(29,
             29,
             31,
-            var(--hero-shadow-opacity)
-        );
+            var(--hero-shadow-opacity));
 
     pointer-events: none;
     user-select: none;
 
     transform:
-        translate3d(
-            var(--hero-shadow-x),
+        translate3d(var(--hero-shadow-x),
             var(--hero-shadow-y),
-            0
-        );
+            0);
 
     filter: blur(1.5px);
 
@@ -257,8 +245,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.8fr)
-        minmax(0, 1fr);
+        minmax(0, 0.8fr) minmax(0, 1fr);
 
     gap: var(--column-gap);
 
@@ -271,10 +258,6 @@ a {
     width: 100%;
     max-width: 580px;
 
-    /*
-      Shorter visible frame while preserving
-      the existing width.
-    */
     aspect-ratio: 4 / 4;
 
     justify-self: end;
@@ -289,6 +272,7 @@ a {
         heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
+
 /* =========================
    HERO PHOTO MOVEMENT
 ========================= */
@@ -297,20 +281,17 @@ a {
 
     0% {
         transform:
-            scale(1.12)
-            translate3d(0, 0, 0);
+            scale(1.12) translate3d(0, 0, 0);
     }
 
     50% {
         transform:
-            scale(1.16)
-            translate3d(-1.5%, -0.5%, 0);
+            scale(1.16) translate3d(-1.5%, -0.5%, 0);
     }
 
     100% {
         transform:
-            scale(1.12)
-            translate3d(0, 0, 0);
+            scale(1.12) translate3d(0, 0, 0);
     }
 
 }
@@ -322,11 +303,6 @@ a {
     height: 100%;
 
     object-fit: cover;
-
-    /*
-      Show more of the bottom of the original image,
-      which crops more from the top.
-    */
     object-position: center 75%;
 
     transform: scale(1.12);
@@ -342,6 +318,7 @@ a {
 
     transform: scale(1.17);
 }
+
 
 /* =========================
    ABOUT COPY
@@ -448,8 +425,7 @@ a {
     margin: 0 auto;
 
     padding:
-        var(--space-section)
-        2rem;
+        var(--space-section) 2rem;
 
     border-bottom: 1px solid var(--line);
 }
@@ -458,8 +434,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        var(--content-inset)
-        1fr;
+        var(--content-inset) 1fr;
 
     margin-bottom: var(--space-large);
 }
@@ -491,8 +466,7 @@ a {
 
 .project {
     padding:
-        var(--space-large)
-        0;
+        var(--space-large) 0;
 
     border-top: 1px solid var(--line);
 }
@@ -512,10 +486,7 @@ a {
     gap: 2rem;
 
     margin:
-        0
-        0
-        var(--space-medium)
-        var(--content-inset);
+        0 0 var(--space-medium) var(--content-inset);
 
     color: var(--muted);
 
@@ -605,10 +576,7 @@ a {
 
 .shadow-project-title {
     margin:
-        0
-        0
-        var(--space-large)
-        var(--content-inset);
+        0 0 var(--space-large) var(--content-inset);
 }
 
 .shadow-project-title h3 {
@@ -627,10 +595,7 @@ a {
     max-width: 1100px;
 
     margin:
-        0
-        0
-        var(--space-medium)
-        var(--content-inset);
+        0 0 var(--space-medium) var(--content-inset);
 }
 
 .shadow-project-question .project-question {
@@ -646,8 +611,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.8fr)
-        minmax(0, 1fr);
+        minmax(0, 0.8fr) minmax(0, 1fr);
 
     gap: var(--column-gap);
 
@@ -673,20 +637,17 @@ a {
 
     0% {
         transform:
-            scale(1.015)
-            translate3d(0, 0, 0);
+            scale(1.015) translate3d(0, 0, 0);
     }
 
     50% {
         transform:
-            scale(1.03)
-            translate3d(0, -10px, 0);
+            scale(1.03) translate3d(0, -10px, 0);
     }
 
     100% {
         transform:
-            scale(1.015)
-            translate3d(0, 0, 0);
+            scale(1.015) translate3d(0, 0, 0);
     }
 
 }
@@ -750,10 +711,7 @@ a {
         repeat(3, minmax(0, 1fr));
 
     margin:
-        var(--space-medium)
-        0
-        0
-        var(--content-inset);
+        var(--space-medium) 0 0 var(--content-inset);
 
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -765,8 +723,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        42px
-        1fr;
+        42px 1fr;
 
     gap: 0.75rem;
 
@@ -816,10 +773,7 @@ a {
 
 .text-project-title {
     margin:
-        0
-        0
-        var(--space-large)
-        var(--content-inset);
+        0 0 var(--space-large) var(--content-inset);
 }
 
 .text-project-title h3 {
@@ -831,8 +785,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 0.8fr)
-        minmax(0, 1fr);
+        minmax(0, 0.8fr) minmax(0, 1fr);
 
     gap: var(--column-gap);
 
@@ -848,6 +801,750 @@ a {
 .text-project-body {
     width: 100%;
     max-width: 620px;
+}
+
+
+/* =========================
+   AI DEMO SPACING
+========================= */
+
+/*
+  The Romantic Relationships project sits
+  directly before the interactive demo.
+
+  Reduce only its bottom padding so that
+  the demo visually belongs to the project.
+*/
+
+.text-project:has(+ .ai-demo) {
+    padding-bottom: 1.5rem;
+}
+
+
+/* =========================
+   AI RESEARCH DEMO
+========================= */
+
+.ai-demo {
+    width: calc(100% - var(--content-inset));
+    max-width: 900px;
+
+    margin:
+        0 auto var(--space-large);
+
+    padding: 0;
+
+    border: 0;
+}
+
+
+/* =========================
+   DEMO HEADING
+========================= */
+
+.ai-demo-header {
+    display: block;
+
+    width: 100%;
+
+    margin:
+        0 0 0.9rem;
+
+    padding:
+        1rem 1.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    border: 1px solid var(--line);
+    border-radius: 16px;
+
+    text-align: center;
+}
+
+.ai-demo-header h4 {
+    margin: 0;
+
+    font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+    font-weight: 600;
+
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.ai-demo-header>p {
+    max-width: 520px;
+
+    margin:
+        0.45rem auto 0;
+
+    color: var(--muted);
+
+    font-size: var(--body-size);
+
+    line-height: 1.45;
+}
+
+
+/* =========================
+   CHAT WINDOW
+========================= */
+
+.ai-chat {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #faf9f6;
+
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(29, 29, 31, 0.05);
+}
+
+
+/* =========================
+   CHAT TOP BAR
+========================= */
+
+.ai-chat-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+
+    padding:
+        0.65rem 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.ai-chat-identity {
+    display: flex;
+    align-items: center;
+
+    gap: 0.65rem;
+}
+
+.ai-chat-avatar,
+.chat-avatar-small {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--text);
+    color: var(--bg);
+
+    font-weight: 600;
+
+    letter-spacing: -0.03em;
+}
+
+.ai-chat-avatar {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    font-size: 0.9rem;
+}
+
+.ai-chat-name {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: var(--body-size);
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+.ai-chat-status {
+    margin: 0.05rem 0 0;
+
+    color: var(--muted);
+
+    font-size: var(--body-size);
+
+    line-height: 1.2;
+}
+
+
+/* =========================
+   CHAT BODY
+========================= */
+
+.ai-chat-body {
+    min-height: 235px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    padding:
+        1.4rem clamp(1rem, 3vw, 2.5rem);
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================
+   CHAT ROWS
+========================= */
+
+.chat-row {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 0.6rem;
+}
+
+.participant-row {
+    justify-content: flex-end;
+}
+
+.ai-row {
+    justify-content: flex-start;
+}
+
+
+/* =========================
+   CHAT BUBBLES
+========================= */
+
+.chat-bubble {
+    max-width: min(620px, 74%);
+
+    padding:
+        0.75rem 1rem;
+
+    font-size: var(--body-size);
+
+    line-height: 1.45;
+
+    letter-spacing: -0.01em;
+}
+
+.chat-bubble p {
+    margin: 0;
+}
+
+.participant-bubble {
+    background: var(--text);
+    color: #ffffff;
+
+    border-radius:
+        17px 17px 5px 17px;
+}
+
+.ai-bubble {
+    min-width: 64px;
+
+    background: #e9e6df;
+    color: var(--text);
+
+    border-radius:
+        17px 17px 17px 5px;
+}
+
+
+/* =========================
+   SMALL AI AVATAR
+========================= */
+
+.chat-avatar-small {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================
+   TYPING INDICATOR
+========================= */
+
+.typing-indicator {
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding:
+        0 0.15rem;
+}
+
+.typing-indicator span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--muted);
+
+    opacity: 0.3;
+
+    animation:
+        aiTyping 1.15s ease-in-out infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes aiTyping {
+
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 0.9;
+
+        transform: translateY(-3px);
+    }
+
+}
+
+
+/* =========================
+   AI RESPONSE
+========================= */
+
+.ai-response {
+    display: none;
+
+    opacity: 0;
+
+    transform: translateY(5px);
+}
+
+.ai-response.visible {
+    display: block;
+
+    animation:
+        aiMessageReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes aiMessageReveal {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   FAKE INPUT BAR
+========================= */
+
+.ai-chat-input {
+    display: flex;
+    align-items: center;
+
+    gap: 0.65rem;
+
+    padding:
+        0.65rem 0.9rem;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border-top: 1px solid var(--line);
+}
+
+.ai-chat-input-placeholder {
+    flex: 1;
+
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    padding:
+        0 0.9rem;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+    border-radius: 20px;
+
+    color: var(--muted);
+
+    font-size: var(--body-size);
+}
+
+.ai-chat-send {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--text);
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* =========================
+   FAKE CHAT INTERACTION
+========================= */
+
+button.ai-chat-input-placeholder {
+    font: inherit;
+    text-align: left;
+
+    cursor: text;
+
+    appearance: none;
+}
+
+button.ai-chat-input-placeholder:hover {
+    border-color: #aaa59c;
+}
+
+button.ai-chat-send {
+    border: 0;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+}
+
+button.ai-chat-send:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   FAKE CHAT POPUP
+========================= */
+
+.fake-chat-popup {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    background: rgba(29, 29, 31, 0.22);
+
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.fake-chat-popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fake-chat-popup-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 440px;
+
+    padding:
+        2.25rem 2rem 1.75rem;
+
+    background: var(--bg);
+
+    border: 1px solid var(--line);
+    border-radius: 20px;
+
+    box-shadow:
+        0 24px 70px rgba(29, 29, 31, 0.14);
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(12px) scale(0.97);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fake-chat-popup.visible .fake-chat-popup-card {
+    opacity: 1;
+
+    transform:
+        translateY(0) scale(1);
+}
+
+.fake-chat-popup-title {
+    margin:
+        0 0 0.6rem;
+
+    color: var(--text);
+
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 600;
+
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.fake-chat-popup-text {
+    margin:
+        0 0 1.5rem;
+
+    color: var(--muted);
+
+    font-size: var(--body-size);
+
+    line-height: 1.5;
+}
+
+.fake-chat-popup-button {
+    padding:
+        0.7rem 1.15rem;
+
+    background: var(--text);
+    color: #ffffff;
+
+    border: 0;
+    border-radius: 100px;
+
+    font: inherit;
+    font-size: var(--body-size);
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s ease;
+}
+
+.fake-chat-popup-button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   CONDITION REVEAL
+========================= */
+
+.ai-demo-result {
+    display: none;
+
+    grid-template-columns:
+        minmax(0, 1fr) auto;
+
+    grid-template-areas:
+        "result switch";
+
+    column-gap: 2rem;
+
+    align-items: center;
+
+    margin-top: 0.9rem;
+
+    padding:
+        1.25rem 1.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.28);
+
+    border: 1px solid var(--line);
+    border-radius: 16px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+}
+
+.ai-demo-result.visible {
+    display: grid;
+
+    animation:
+        aiResultReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes aiResultReveal {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CONDITION TEXT
+========================= */
+
+.ai-demo-result-label {
+    grid-column: 1;
+    grid-row: 1;
+
+    align-self: start;
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    font-weight: 600;
+
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.ai-demo-condition {
+    grid-column: 1;
+    grid-row: 2;
+
+    margin:
+        0.25rem 0 0;
+
+    color: #52708f;
+
+    font-size: clamp(1.35rem, 2vw, 1.85rem);
+    font-weight: 600;
+
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+
+/* =========================
+   CONDITION EXPLANATION
+========================= */
+
+.ai-demo-explanation {
+    grid-column: 1;
+    grid-row: 3;
+
+    max-width: 650px;
+
+    margin:
+        0.7rem 0 0;
+
+    color: var(--muted);
+
+    font-size: var(--body-size);
+
+    line-height: 1.45;
+}
+
+
+/* =========================
+   SWITCH CONDITION
+========================= */
+
+.ai-demo-switch {
+    grid-column: 2;
+    grid-row:
+        1 / span 3;
+
+    align-self: center;
+
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.6rem;
+
+    margin: 0;
+
+    padding:
+        0.65rem 0;
+
+    background: transparent;
+
+    border: 0;
+    border-bottom: 1px solid var(--line);
+
+    color: var(--text);
+
+    font: inherit;
+    font-size: var(--body-size);
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease;
+}
+
+.ai-demo-switch span {
+    transition:
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-demo-switch:hover {
+    border-color: var(--text);
+}
+
+.ai-demo-switch:hover span {
+    transform: translateX(5px);
 }
 
 
@@ -877,8 +1574,7 @@ a {
     display: grid;
 
     grid-template-columns:
-        100px
-        1fr;
+        100px 1fr;
 
     gap: 2rem;
 
@@ -940,8 +1636,7 @@ a {
     opacity: 0;
 
     transform:
-        translateY(50px)
-        scale(0.985);
+        translateY(50px) scale(0.985);
 
     transition:
         opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
@@ -952,8 +1647,7 @@ a {
     opacity: 1;
 
     transform:
-        translateY(0)
-        scale(1);
+        translateY(0) scale(1);
 }
 
 
@@ -968,8 +1662,7 @@ a {
     margin: 0 auto;
 
     padding:
-        2.5rem
-        2rem;
+        2.5rem 2rem;
 
     color: var(--muted);
 
@@ -1048,6 +1741,43 @@ a {
     .shadow-project-copy .project-body,
     .text-project-body {
         max-width: 680px;
+    }
+
+
+    /* AI DEMO */
+
+    .ai-demo {
+        width: 100%;
+        max-width: 900px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ai-demo-result {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-demo-result-label {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .ai-demo-condition {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .ai-demo-explanation {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .ai-demo-switch {
+        grid-column: 1;
+        grid-row: 4;
+
+        margin-top: 0.5rem;
     }
 
 }
@@ -1132,12 +1862,15 @@ a {
 
     .project {
         padding:
-            var(--space-large)
-            0;
+            var(--space-large) 0;
     }
 
     .project:last-child {
         padding-bottom: 0;
+    }
+
+    .text-project:has(+ .ai-demo) {
+        padding-bottom: 1.25rem;
     }
 
     .project-meta-simple {
@@ -1184,6 +1917,43 @@ a {
         flex-direction: column;
 
         gap: 0.25rem;
+    }
+
+
+    /* AI DEMO */
+
+    .ai-demo {
+        width: 100%;
+    }
+
+    .ai-demo-header {
+        padding:
+            1rem 1.1rem;
+    }
+
+    .ai-chat {
+        border-radius: 16px;
+    }
+
+    .ai-chat-body {
+        min-height: 240px;
+
+        padding:
+            1.25rem 0.9rem;
+    }
+
+    .chat-bubble {
+        max-width: 85%;
+    }
+
+    .ai-demo-result {
+        padding:
+            1.1rem;
+    }
+
+    .ai-demo-result-label,
+    .ai-demo-condition {
+        font-size: 1.35rem;
     }
 
 

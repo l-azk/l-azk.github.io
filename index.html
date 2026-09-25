@@ -260,7 +260,144 @@ title:
 
     </article>
 
+    <!-- =========================
+     COUPLE CONFLICT DEMO
+========================== -->
 
+    <div class="ai-demo reveal" id="ai-demo">
+
+        <div class="ai-demo-header">
+
+            <h4>Try the experiment!</h4>
+
+            <p>
+                See one version of the AI interaction used in this research.
+            </p>
+
+        </div>
+
+
+        <div class="ai-chat">
+
+            <div class="ai-chat-topbar">
+
+                <div class="ai-chat-identity">
+
+                    <div class="ai-chat-avatar" aria-hidden="true">
+                        AI
+                    </div>
+
+                    <div>
+                        <p class="ai-chat-name">AI chatbot</p>
+                        <p class="ai-chat-status">Online</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-chat-body">
+
+                <div class="chat-row participant-row">
+
+                    <div class="chat-bubble participant-bubble">
+
+                        <p>
+                            My partner and I had plans for dinner, but they cancelled
+                            at the last minute to go out with their friends. I was
+                            pretty frustrated.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chat-row ai-row">
+
+                    <div class="chat-avatar-small" aria-hidden="true">
+                        AI
+                    </div>
+
+
+                    <div class="chat-bubble ai-bubble">
+
+                        <div class="typing-indicator" id="ai-demo-typing" aria-label="AI is typing">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+
+                        <p class="ai-response" id="ai-demo-response"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="ai-chat-input">
+
+                <button class="ai-chat-input-placeholder" id="fake-chat-input" type="button">
+                    Message AI...
+                </button>
+
+                <button class="ai-chat-send" id="fake-chat-send" type="button" aria-label="Send message">
+                    ↑
+                </button>
+
+            </div>
+
+
+            <div class="fake-chat-popup" id="fake-chat-popup" aria-hidden="true">
+
+                <div class="fake-chat-popup-card" role="dialog" aria-modal="true"
+                    aria-labelledby="fake-chat-popup-title">
+
+                    <p class="fake-chat-popup-title" id="fake-chat-popup-title">
+                        Sorry, this isn't a real chatbox!
+                    </p>
+
+                    <p class="fake-chat-popup-text">
+                        I don't have the funds for that.
+                    </p>
+
+                    <button class="fake-chat-popup-button" id="fake-chat-popup-button" type="button">
+                        Fair enough
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="ai-demo-result" id="ai-demo-result">
+
+            <p class="ai-demo-result-label">
+                You were randomly shown
+            </p>
+
+            <p class="ai-demo-condition" id="ai-demo-condition"></p>
+
+            <p class="ai-demo-explanation">
+                In the study, participants are randomly assigned to interact
+                with an AI that either supports their own perspective or
+                encourages them to consider their partner’s perspective.
+            </p>
+
+            <button class="ai-demo-switch" id="ai-demo-switch" type="button">
+                Try the other condition
+                <span aria-hidden="true">→</span>
+            </button>
+
+        </div>
+
+    </div>
 
     <!-- =========================
        AI & APOLOGIES
