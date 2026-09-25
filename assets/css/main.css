@@ -271,6 +271,12 @@ a {
     width: 100%;
     max-width: 580px;
 
+    /*
+      Shorter visible frame while preserving
+      the existing width.
+    */
+    aspect-ratio: 4 / 4;
+
     justify-self: end;
 
     overflow: hidden;
@@ -283,7 +289,6 @@ a {
         heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-
 /* =========================
    HERO PHOTO MOVEMENT
 ========================= */
@@ -293,19 +298,19 @@ a {
     0% {
         transform:
             scale(1.12)
-            translate3d(0, -3%, 0);
+            translate3d(0, 0, 0);
     }
 
     50% {
         transform:
             scale(1.16)
-            translate3d(-1.5%, -4.5%, 0);
+            translate3d(-1.5%, -0.5%, 0);
     }
 
     100% {
         transform:
             scale(1.12)
-            translate3d(0, -3%, 0);
+            translate3d(0, 0, 0);
     }
 
 }
@@ -314,14 +319,17 @@ a {
     display: block;
 
     width: 100%;
-    aspect-ratio: 4 / 5;
+    height: 100%;
 
     object-fit: cover;
-    object-position: center;
 
-    transform:
-        scale(1.12)
-        translateY(-3%);
+    /*
+      Show more of the bottom of the original image,
+      which crops more from the top.
+    */
+    object-position: center 75%;
+
+    transform: scale(1.12);
 
     animation:
         heroPhotoDrift 9s ease-in-out infinite;
@@ -332,11 +340,8 @@ a {
 .about-hero-photo:hover img {
     animation-play-state: paused;
 
-    transform:
-        scale(1.17)
-        translateY(-4%);
+    transform: scale(1.17);
 }
-
 
 /* =========================
    ABOUT COPY
