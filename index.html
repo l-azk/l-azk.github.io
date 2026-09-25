@@ -346,21 +346,46 @@ title:
     </article>
 
 
+
     <!-- =========================
          COUPLE CONFLICT DEMO
     ========================== -->
 
     <div class="ai-demo reveal" id="ai-demo">
 
-        <div class="ai-demo-header">
+        <button
+            class="ai-demo-start"
+            id="ai-demo-start"
+            type="button"
+        >
 
-            <h4>Try the experiment!</h4>
+            <span class="ai-demo-start-copy">
 
-            <p>
-                See one version of the AI interaction used in this research.
-            </p>
+                <span
+                    class="ai-demo-start-title"
+                    id="ai-demo-start-title"
+                >
+                    Try the experiment!
+                </span>
 
-        </div>
+                <span
+                    class="ai-demo-start-description"
+                    id="ai-demo-start-description"
+                >
+                    Click to see one version of the AI interaction used in this research.
+                </span>
+
+            </span>
+
+            <span
+                class="ai-demo-start-arrow"
+                id="ai-demo-start-arrow"
+                aria-hidden="true"
+            >
+                →
+            </span>
+
+        </button>
 
 
         <div class="ai-chat">
@@ -374,8 +399,15 @@ title:
                     </div>
 
                     <div>
-                        <p class="ai-chat-name">AI chatbot</p>
-                        <p class="ai-chat-status">Online</p>
+
+                        <p class="ai-chat-name">
+                            AI chatbot
+                        </p>
+
+                        <p class="ai-chat-status">
+                            Online
+                        </p>
+
                     </div>
 
                 </div>
@@ -400,9 +432,15 @@ title:
                 </div>
 
 
-                <div class="chat-row ai-row">
+                <div
+                    class="chat-row ai-row ai-row-hidden"
+                    id="ai-demo-ai-row"
+                >
 
-                    <div class="chat-avatar-small" aria-hidden="true">
+                    <div
+                        class="chat-avatar-small"
+                        aria-hidden="true"
+                    >
                         AI
                     </div>
 
@@ -418,7 +456,6 @@ title:
                             <span></span>
                             <span></span>
                         </div>
-
 
                         <p
                             class="ai-response"

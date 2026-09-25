@@ -15,7 +15,6 @@
 
     --column-gap: clamp(2.5rem, 3.5vw, 4rem);
 
-    /* TYPOGRAPHY */
     --font-large-heading: clamp(4.5rem, 7vw, 7.5rem);
     --font-project-title: clamp(3rem, 4.2vw, 4.5rem);
     --font-question: clamp(1.55rem, 2.1vw, 2.1rem);
@@ -72,7 +71,6 @@ a {
 
 .site-header {
     position: sticky;
-
     top: 0;
     z-index: 100;
 
@@ -99,13 +97,11 @@ a {
 .site-name {
     font-size: var(--body-size);
     font-weight: 600;
-
     letter-spacing: -0.02em;
 }
 
 .nav-links {
     display: flex;
-
     gap: 1.75rem;
 }
 
@@ -119,7 +115,6 @@ a {
 
 .nav-links a:hover {
     opacity: 0.55;
-
     transform: translateY(-1px);
 }
 
@@ -130,7 +125,6 @@ a {
 
 .about-hero {
     width: 100%;
-
     border-bottom: 1px solid var(--line);
 }
 
@@ -144,11 +138,6 @@ a {
         var(--space-section)
         2rem;
 }
-
-
-/* =========================
-   HERO HEADING
-========================= */
 
 .about-hero-heading {
     display: grid;
@@ -204,13 +193,11 @@ a {
 .hero-title-text,
 .hero-title-shadow {
     grid-area: 1 / 1;
-
     display: block;
 }
 
 .hero-title-text {
     position: relative;
-
     z-index: 2;
 
     color: var(--text);
@@ -218,7 +205,6 @@ a {
 
 .hero-title-shadow {
     position: relative;
-
     z-index: 1;
 
     color:
@@ -285,13 +271,7 @@ a {
         heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-
-/* =========================
-   HERO PHOTO MOVEMENT
-========================= */
-
 @keyframes heroPhotoDrift {
-
     0% {
         transform:
             scale(1.12)
@@ -309,7 +289,6 @@ a {
             scale(1.12)
             translate3d(0, 0, 0);
     }
-
 }
 
 .about-hero-photo img {
@@ -331,7 +310,6 @@ a {
 
 .about-hero-photo:hover img {
     animation-play-state: paused;
-
     transform: scale(1.17);
 }
 
@@ -402,32 +380,22 @@ a {
 
 .about-personal .personal-link:hover {
     text-decoration-color: var(--text);
-
     opacity: 0.65;
 }
 
-
-/* =========================
-   HERO ANIMATIONS
-========================= */
-
 @keyframes heroReveal {
-
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
 
 @keyframes fadeIn {
-
     to {
         opacity: 1;
     }
-
 }
+
 
 /* =========================
    GENERAL SECTIONS
@@ -555,6 +523,13 @@ a {
 
     line-height: 0.96;
     letter-spacing: -0.05em;
+
+    transition:
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project:hover h3 {
+    transform: translateX(9px);
 }
 
 .project-question {
@@ -566,6 +541,13 @@ a {
 
     line-height: 1.2;
     letter-spacing: -0.025em;
+
+    transition:
+        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-question:hover {
+    transform: translateX(7px);
 }
 
 .project-body {
@@ -583,29 +565,6 @@ a {
 
 .project-body p:last-child {
     margin-bottom: 0;
-}
-
-
-/* =========================
-   PROJECT HOVER MOVEMENT
-========================= */
-
-.project h3 {
-    transition:
-        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project:hover h3 {
-    transform: translateX(9px);
-}
-
-.project-question {
-    transition:
-        transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project-question:hover {
-    transform: translateX(7px);
 }
 
 
@@ -683,7 +642,6 @@ a {
 
 .derivative-individual-trigger em {
     position: relative;
-
     z-index: 2;
 
     color: var(--text);
@@ -706,7 +664,6 @@ a {
 
 .derivative-individual-shadow {
     position: absolute;
-
     z-index: 1;
 
     top: 0;
@@ -726,8 +683,7 @@ a {
 
     filter: blur(1px);
 
-    transform:
-        translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 
     transition:
         opacity 0.25s ease,
@@ -858,17 +814,15 @@ a {
 
 .derivative-popup-button:hover {
     transform: translateY(-2px);
-
     opacity: 0.8;
 }
 
 
 /* =========================
-   SHADOW STIMULUS MOVEMENT
+   SHADOW STIMULUS
 ========================= */
 
 @keyframes stimulusFloat {
-
     0% {
         transform:
             scale(1.015)
@@ -886,12 +840,10 @@ a {
             scale(1.015)
             translate3d(0, 0, 0);
     }
-
 }
 
 .stimulus-stage {
     min-width: 0;
-
     overflow: hidden;
 }
 
@@ -1062,7 +1014,6 @@ a {
 
 .stimulus-easter-egg-text strong {
     color: var(--text);
-
     font-weight: 600;
 }
 
@@ -1094,18 +1045,13 @@ a {
     max-width: 620px;
 }
 
-
-/* =========================
-   AI DEMO SPACING
-========================= */
-
 .text-project:has(+ .ai-demo) {
     padding-bottom: 1.5rem;
 }
 
 
 /* =========================
-   AI RESEARCH DEMO
+   AI DEMO
 ========================= */
 
 .ai-demo {
@@ -1124,13 +1070,17 @@ a {
 
 
 /* =========================
-   DEMO HEADING
+   START THE EXPERIMENT
 ========================= */
 
-.ai-demo-header {
-    display: block;
-
+.ai-demo-start {
     width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 2rem;
 
     margin:
         0
@@ -1138,7 +1088,7 @@ a {
         0.9rem;
 
     padding:
-        1rem
+        1.15rem
         1.5rem;
 
     background:
@@ -1147,12 +1097,46 @@ a {
     border: 1px solid var(--line);
     border-radius: 16px;
 
-    text-align: center;
+    color: var(--text);
+
+    font: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s ease;
 }
 
-.ai-demo-header h4 {
-    margin: 0;
+.ai-demo-start:hover {
+    background:
+        rgba(255, 255, 255, 0.5);
 
+    border-color: #aaa59c;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(29, 29, 31, 0.06);
+}
+
+.ai-demo-start:focus-visible {
+    outline: 2px solid var(--text);
+    outline-offset: 3px;
+}
+
+.ai-demo-start-copy {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.3rem;
+}
+
+.ai-demo-start-title {
     font-size: clamp(1.7rem, 2.4vw, 2.35rem);
     font-weight: 600;
 
@@ -1160,19 +1144,65 @@ a {
     letter-spacing: -0.04em;
 }
 
-.ai-demo-header > p {
-    max-width: 520px;
-
-    margin:
-        0.45rem
-        auto
-        0;
-
+.ai-demo-start-description {
     color: var(--muted);
 
     font-size: var(--body-size);
 
     line-height: 1.45;
+}
+
+.ai-demo-start-arrow {
+    flex-shrink: 0;
+
+    font-size: 2rem;
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-demo-start:hover
+.ai-demo-start-arrow {
+    transform: translateX(7px);
+}
+
+
+/* STARTED STATE */
+
+.ai-demo-start.started {
+    cursor: default;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-color: var(--line);
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+.ai-demo-start.started:hover {
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    border-color: var(--line);
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+.ai-demo-start.started
+.ai-demo-start-arrow {
+    opacity: 0;
+
+    transform: translateX(5px);
+
+    pointer-events: none;
 }
 
 
@@ -1316,6 +1346,13 @@ a {
 }
 
 
+/* HIDE AI UNTIL USER STARTS */
+
+.ai-row-hidden {
+    display: none;
+}
+
+
 /* =========================
    CHAT BUBBLES
 ========================= */
@@ -1330,7 +1367,6 @@ a {
     font-size: var(--body-size);
 
     line-height: 1.45;
-
     letter-spacing: -0.01em;
 }
 
@@ -1361,11 +1397,6 @@ a {
         17px
         5px;
 }
-
-
-/* =========================
-   SMALL AI AVATAR
-========================= */
 
 .chat-avatar-small {
     width: 30px;
@@ -1418,21 +1449,17 @@ a {
 }
 
 @keyframes aiTyping {
-
     0%,
     60%,
     100% {
         opacity: 0.3;
-
         transform: translateY(0);
     }
 
     30% {
         opacity: 0.9;
-
         transform: translateY(-3px);
     }
-
 }
 
 
@@ -1459,13 +1486,10 @@ a {
 }
 
 @keyframes aiMessageReveal {
-
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
 
 
@@ -1530,11 +1554,6 @@ a {
     font-weight: 600;
 }
 
-
-/* =========================
-   FAKE CHAT INTERACTION
-========================= */
-
 button.ai-chat-input-placeholder {
     font: inherit;
     text-align: left;
@@ -1560,7 +1579,6 @@ button.ai-chat-send {
 
 button.ai-chat-send:hover {
     transform: translateY(-2px);
-
     opacity: 0.8;
 }
 
@@ -1632,7 +1650,8 @@ button.ai-chat-send:hover {
         transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fake-chat-popup.visible .fake-chat-popup-card {
+.fake-chat-popup.visible
+.fake-chat-popup-card {
     opacity: 1;
 
     transform:
@@ -1692,7 +1711,6 @@ button.ai-chat-send:hover {
 
 .fake-chat-popup-button:hover {
     transform: translateY(-2px);
-
     opacity: 0.8;
 }
 
@@ -1740,19 +1758,11 @@ button.ai-chat-send:hover {
 }
 
 @keyframes aiResultReveal {
-
     to {
         opacity: 1;
-
         transform: translateY(0);
     }
-
 }
-
-
-/* =========================
-   CONDITION TEXT
-========================= */
 
 .ai-demo-result-label {
     grid-column: 1;
@@ -1789,11 +1799,6 @@ button.ai-chat-send:hover {
     letter-spacing: -0.035em;
 }
 
-
-/* =========================
-   CONDITION EXPLANATION
-========================= */
-
 .ai-demo-explanation {
     grid-column: 1;
     grid-row: 3;
@@ -1811,11 +1816,6 @@ button.ai-chat-send:hover {
 
     line-height: 1.45;
 }
-
-
-/* =========================
-   SWITCH CONDITION
-========================= */
 
 .ai-demo-switch {
     grid-column: 2;
@@ -1888,7 +1888,7 @@ button.ai-chat-send:hover {
 
     color: var(--muted);
 
-    font-size: var(--body-size);
+    font-size: var(--font-regular);
     font-weight: 500;
 
     text-transform: uppercase;
@@ -1925,7 +1925,7 @@ button.ai-chat-send:hover {
 
     color: var(--muted);
 
-    font-size: var(--body-size);
+    font-size: var(--font-regular);
 }
 
 .presentation-title {
@@ -1940,10 +1940,12 @@ button.ai-chat-send:hover {
     letter-spacing: -0.01em;
 }
 
-.presentation-year,
 .presentation-details,
-.presentation-venue,
-.presentation-status {
+.presentation-venue {
+    margin: 0.2rem 0;
+
+    color: var(--muted);
+
     font-size: var(--font-regular);
 }
 
@@ -2017,7 +2019,6 @@ button.ai-chat-send:hover {
 
 .footer-links a:hover {
     color: var(--text);
-
     transform: translateY(-1px);
 }
 
@@ -2068,17 +2069,16 @@ button.ai-chat-send:hover {
         max-width: 900px;
     }
 
-    .shadow-project-question .project-question {
+    .shadow-project-question
+    .project-question {
         max-width: 900px;
     }
 
-    .shadow-project-copy .project-body,
+    .shadow-project-copy
+    .project-body,
     .text-project-body {
         max-width: 680px;
     }
-
-
-    /* AI DEMO */
 
     .ai-demo {
         width: 100%;
@@ -2113,7 +2113,6 @@ button.ai-chat-send:hover {
 
         margin-top: 0.5rem;
     }
-
 }
 
 
@@ -2128,7 +2127,6 @@ button.ai-chat-send:hover {
         --space-large: 3.5rem;
         --space-section: 4rem;
     }
-
 
     .site-nav {
         padding: 1rem 1.25rem;
@@ -2145,19 +2143,16 @@ button.ai-chat-send:hover {
         justify-content: flex-end;
     }
 
-
     .about-hero-inner,
     .section {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
 
-
     .section {
         padding-top: 2.75rem;
         padding-bottom: 2.75rem;
     }
-
 
     .about-hero-heading,
     .section-heading {
@@ -2168,7 +2163,8 @@ button.ai-chat-send:hover {
         margin-bottom: 2.5rem;
     }
 
-    .about-hero-heading .section-number {
+    .about-hero-heading
+    .section-number {
         padding-top: 0;
     }
 
@@ -2179,7 +2175,6 @@ button.ai-chat-send:hover {
         --hero-shadow-y: 4px;
         --hero-shadow-opacity: 0.1;
     }
-
 
     .about-hero-profile {
         gap: var(--space-medium);
@@ -2199,7 +2194,6 @@ button.ai-chat-send:hover {
         font-size: 1.3rem;
     }
 
-
     .project {
         padding:
             2.75rem
@@ -2217,9 +2211,6 @@ button.ai-chat-send:hover {
     .text-project:has(+ .ai-demo) {
         padding-bottom: 1.25rem;
     }
-
-
-    /* PROJECT HEADER */
 
     .project-header {
         grid-template-columns: 1fr;
@@ -2242,11 +2233,9 @@ button.ai-chat-send:hover {
         white-space: normal;
     }
 
-
     .shadow-project-question {
         margin-bottom: var(--space-medium);
     }
-
 
     .stimulus-selector {
         grid-template-columns: 1fr;
@@ -2272,16 +2261,29 @@ button.ai-chat-send:hover {
     }
 
 
+    /* AI START BUTTON */
+
+    .ai-demo-start {
+        gap: 1rem;
+
+        padding:
+            1rem
+            1.1rem;
+    }
+
+    .ai-demo-start-title {
+        font-size: 1.7rem;
+    }
+
+    .ai-demo-start-arrow {
+        font-size: 1.7rem;
+    }
+
+
     /* AI DEMO */
 
     .ai-demo {
         width: 100%;
-    }
-
-    .ai-demo-header {
-        padding:
-            1rem
-            1.1rem;
     }
 
     .ai-chat {
@@ -2309,16 +2311,13 @@ button.ai-chat-send:hover {
         font-size: 1.35rem;
     }
 
-
     .presentation-item {
         grid-template-columns: 1fr;
 
         gap: 0.75rem;
     }
 
-
     .footer-content {
         flex-direction: column;
     }
-
 }

@@ -3,11 +3,14 @@
 ========================================= */
 
 const heroTitle =
-    document.getElementById("interactive-hero-title");
+    document.getElementById(
+        "interactive-hero-title"
+    );
 
 const heroHeading =
-    document.querySelector(".about-hero-heading");
-
+    document.querySelector(
+        ".about-hero-heading"
+    );
 
 if (
     heroTitle &&
@@ -16,14 +19,12 @@ if (
         "(hover: hover) and (pointer: fine)"
     ).matches
 ) {
-
     heroHeading.addEventListener(
         "mousemove",
         (event) => {
 
             const rect =
                 heroHeading.getBoundingClientRect();
-
 
             const mouseX =
                 (event.clientX - rect.left) /
@@ -33,20 +34,17 @@ if (
                 (event.clientY - rect.top) /
                 rect.height;
 
-
             const normalizedX =
                 (mouseX - 0.5) * 2;
 
             const normalizedY =
                 (mouseY - 0.5) * 2;
 
-
             const shadowX =
                 5 - normalizedX * 8;
 
             const shadowY =
                 5 - normalizedY * 6;
-
 
             const distance =
                 Math.min(
@@ -57,28 +55,23 @@ if (
                     )
                 );
 
-
             const opacity =
                 0.09 + distance * 0.04;
-
 
             heroTitle.style.setProperty(
                 "--hero-shadow-x",
                 `${shadowX}px`
             );
 
-
             heroTitle.style.setProperty(
                 "--hero-shadow-y",
                 `${shadowY}px`
             );
 
-
             heroTitle.style.setProperty(
                 "--hero-shadow-opacity",
                 opacity
             );
-
         }
     );
 
@@ -92,23 +85,18 @@ if (
                 "5px"
             );
 
-
             heroTitle.style.setProperty(
                 "--hero-shadow-y",
                 "5px"
             );
 
-
             heroTitle.style.setProperty(
                 "--hero-shadow-opacity",
                 "0.11"
             );
-
         }
     );
-
 }
-
 
 
 /* =========================================
@@ -116,43 +104,54 @@ if (
 ========================================= */
 
 const stimulusButtons =
-    document.querySelectorAll(".stimulus-button");
-
+    document.querySelectorAll(
+        ".stimulus-button"
+    );
 
 const stimulusImage =
-    document.getElementById("shadow-stimulus");
-
+    document.getElementById(
+        "shadow-stimulus"
+    );
 
 const stimulusCaption =
-    document.getElementById("stimulus-caption-text");
+    document.getElementById(
+        "stimulus-caption-text"
+    );
 
 
 function changeStimulus(button) {
 
-    if (!stimulusImage || !stimulusCaption) {
+    if (
+        !stimulusImage ||
+        !stimulusCaption
+    ) {
         return;
     }
 
-
     const newImage =
         button.dataset.image;
-
 
     const newCaption =
         button.dataset.caption;
 
 
-    stimulusButtons.forEach((item) => {
+    stimulusButtons.forEach(
+        (item) => {
+            item.classList.remove(
+                "active"
+            );
+        }
+    );
 
-        item.classList.remove("active");
 
-    });
-
-
-    button.classList.add("active");
+    button.classList.add(
+        "active"
+    );
 
 
-    stimulusImage.classList.add("changing");
+    stimulusImage.classList.add(
+        "changing"
+    );
 
 
     setTimeout(() => {
@@ -160,33 +159,28 @@ function changeStimulus(button) {
         stimulusImage.src =
             newImage;
 
-
         stimulusCaption.textContent =
             newCaption;
 
 
-        if (stimulusImage.complete) {
-
+        if (
+            stimulusImage.complete
+        ) {
             stimulusImage.classList.remove(
                 "changing"
             );
-
         } else {
 
-            stimulusImage.onload = () => {
-
-                stimulusImage.classList.remove(
-                    "changing"
-                );
-
-            };
-
+            stimulusImage.onload =
+                () => {
+                    stimulusImage.classList.remove(
+                        "changing"
+                    );
+                };
         }
 
     }, 200);
-
 }
-
 
 
 /* =========================================
@@ -194,14 +188,10 @@ function changeStimulus(button) {
 ========================================= */
 
 const stimulusEasterEgg =
-    document.getElementById("stimulus-easter-egg");
+    document.getElementById(
+        "stimulus-easter-egg"
+    );
 
-
-/*
-  Condition 01 is already visible when the
-  page loads, so count it as viewed from
-  the beginning.
-*/
 
 const viewedStimulusConditions =
     new Set(["wall"]);
@@ -211,7 +201,9 @@ let stimulusEasterEggFound =
     false;
 
 
-function recordStimulusCondition(button) {
+function recordStimulusCondition(
+    button
+) {
 
     if (
         !button ||
@@ -235,16 +227,16 @@ function recordStimulusCondition(button) {
     );
 
 
-    /*
-      Because condition 01 starts as viewed,
-      the visitor only needs to explore
-      conditions 02 and 03.
-    */
-
     if (
-        viewedStimulusConditions.has("wall") &&
-        viewedStimulusConditions.has("overlap") &&
-        viewedStimulusConditions.has("mask") &&
+        viewedStimulusConditions.has(
+            "wall"
+        ) &&
+        viewedStimulusConditions.has(
+            "overlap"
+        ) &&
+        viewedStimulusConditions.has(
+            "mask"
+        ) &&
         stimulusEasterEgg
     ) {
 
@@ -258,60 +250,53 @@ function recordStimulusCondition(button) {
         );
 
 
-        requestAnimationFrame(() => {
+        requestAnimationFrame(
+            () => {
 
-            stimulusEasterEgg.classList.add(
-                "visible"
-            );
+                stimulusEasterEgg.classList.add(
+                    "visible"
+                );
 
-        });
-
+            }
+        );
     }
-
 }
 
 
+stimulusButtons.forEach(
+    (button) => {
 
-/*
-  Hovering over conditions 02 or 03 changes
-  the displayed stimulus and counts that
-  condition as viewed.
+        button.addEventListener(
+            "mouseenter",
+            () => {
 
-  Hovering over 01 also works normally,
-  although 01 already counts as viewed.
-*/
+                changeStimulus(
+                    button
+                );
 
-stimulusButtons.forEach((button) => {
-
-    button.addEventListener(
-        "mouseenter",
-        () => {
-
-            changeStimulus(button);
-
-            recordStimulusCondition(button);
-
-        }
-    );
+                recordStimulusCondition(
+                    button
+                );
+            }
+        );
 
 
-    /*
-      Keep click support for touchscreens.
-    */
+        button.addEventListener(
+            "click",
+            () => {
 
-    button.addEventListener(
-        "click",
-        () => {
+                changeStimulus(
+                    button
+                );
 
-            changeStimulus(button);
+                recordStimulusCondition(
+                    button
+                );
+            }
+        );
 
-            recordStimulusCondition(button);
-
-        }
-    );
-
-});
-
+    }
+);
 
 
 /* =========================================
@@ -323,25 +308,16 @@ const derivativeIndividualTrigger =
         "derivative-individual-trigger"
     );
 
-
 const derivativePopup =
     document.getElementById(
         "derivative-popup"
     );
-
 
 const derivativePopupButton =
     document.getElementById(
         "derivative-popup-button"
     );
 
-
-/*
-  The shadow itself is controlled entirely
-  by CSS hover.
-
-  Clicking the phrase opens the popup.
-*/
 
 function openDerivativePopup() {
 
@@ -366,7 +342,6 @@ function openDerivativePopup() {
         derivativePopupButton.focus();
 
     }
-
 }
 
 
@@ -388,62 +363,91 @@ function closeDerivativePopup() {
     );
 
 
-    if (derivativeIndividualTrigger) {
+    if (
+        derivativeIndividualTrigger
+    ) {
 
         derivativeIndividualTrigger.focus();
 
     }
-
 }
 
 
-if (derivativeIndividualTrigger) {
+if (
+    derivativeIndividualTrigger
+) {
 
     derivativeIndividualTrigger.addEventListener(
         "click",
         openDerivativePopup
     );
-
 }
 
 
-if (derivativePopupButton) {
+if (
+    derivativePopupButton
+) {
 
     derivativePopupButton.addEventListener(
         "click",
         closeDerivativePopup
     );
-
 }
-
 
 
 /* =========================================
    COUPLE CONFLICT AI DEMO
 ========================================= */
 
-const aiDemo =
-    document.getElementById("ai-demo");
+const aiDemoStart =
+    document.getElementById(
+        "ai-demo-start"
+    );
 
+const aiDemoStartTitle =
+    document.getElementById(
+        "ai-demo-start-title"
+    );
+
+const aiDemoStartDescription =
+    document.getElementById(
+        "ai-demo-start-description"
+    );
+
+const aiDemoStartArrow =
+    document.getElementById(
+        "ai-demo-start-arrow"
+    );
+
+const aiDemoAiRow =
+    document.getElementById(
+        "ai-demo-ai-row"
+    );
 
 const aiDemoTyping =
-    document.getElementById("ai-demo-typing");
-
+    document.getElementById(
+        "ai-demo-typing"
+    );
 
 const aiDemoResponse =
-    document.getElementById("ai-demo-response");
-
+    document.getElementById(
+        "ai-demo-response"
+    );
 
 const aiDemoResult =
-    document.getElementById("ai-demo-result");
-
+    document.getElementById(
+        "ai-demo-result"
+    );
 
 const aiDemoCondition =
-    document.getElementById("ai-demo-condition");
-
+    document.getElementById(
+        "ai-demo-condition"
+    );
 
 const aiDemoSwitch =
-    document.getElementById("ai-demo-switch");
+    document.getElementById(
+        "ai-demo-switch"
+    );
 
 
 const aiDemoConditions = {
@@ -474,18 +478,17 @@ const aiDemoConditions = {
 let currentAiCondition =
     null;
 
-
 let aiDemoStarted =
     false;
-
 
 let aiDemoTimeout =
     null;
 
-
 let aiResultTimeout =
     null;
 
+
+/* RANDOM ASSIGNMENT */
 
 function randomlyAssignAiCondition() {
 
@@ -496,13 +499,18 @@ function randomlyAssignAiCondition() {
 }
 
 
-function showAiCondition(condition) {
+/* RUN ONE CONDITION */
+
+function showAiCondition(
+    condition
+) {
 
     if (
         !aiDemoTyping ||
         !aiDemoResponse ||
         !aiDemoResult ||
-        !aiDemoCondition
+        !aiDemoCondition ||
+        !aiDemoAiRow
     ) {
         return;
     }
@@ -516,146 +524,227 @@ function showAiCondition(condition) {
         aiDemoTimeout
     );
 
-
     clearTimeout(
         aiResultTimeout
     );
 
 
+    /*
+      Make the AI row visible.
+    */
+
+    aiDemoAiRow.classList.remove(
+        "ai-row-hidden"
+    );
+
+
+    /*
+      Reset previous response/result.
+    */
+
     aiDemoResponse.classList.remove(
         "visible"
     );
-
 
     aiDemoResult.classList.remove(
         "visible"
     );
 
-
     aiDemoResponse.style.display =
         "none";
-
 
     aiDemoResult.style.display =
         "none";
 
 
+    /*
+      Start typing.
+    */
+
     aiDemoTyping.style.display =
         "flex";
 
 
+    /*
+      Wait five seconds, then show
+      the AI response.
+    */
+
     aiDemoTimeout =
-        setTimeout(() => {
+        setTimeout(
+            () => {
 
-            const selectedCondition =
-                aiDemoConditions[
-                    currentAiCondition
-                ];
-
-
-            aiDemoTyping.style.display =
-                "none";
+                const selectedCondition =
+                    aiDemoConditions[
+                        currentAiCondition
+                    ];
 
 
-            aiDemoResponse.textContent =
-                selectedCondition.response;
+                aiDemoTyping.style.display =
+                    "none";
 
 
-            aiDemoCondition.textContent =
-                selectedCondition.label;
+                aiDemoResponse.textContent =
+                    selectedCondition.response;
 
 
-            aiDemoResponse.style.display =
-                "block";
+                aiDemoCondition.textContent =
+                    selectedCondition.label;
 
 
-            requestAnimationFrame(() => {
-
-                aiDemoResponse.classList.add(
-                    "visible"
-                );
-
-            });
+                aiDemoResponse.style.display =
+                    "block";
 
 
-            aiResultTimeout =
-                setTimeout(() => {
+                requestAnimationFrame(
+                    () => {
 
-                    aiDemoResult.style.display =
-                        "grid";
-
-
-                    requestAnimationFrame(() => {
-
-                        aiDemoResult.classList.add(
+                        aiDemoResponse.classList.add(
                             "visible"
                         );
 
-                    });
+                    }
+                );
 
-                }, 650);
+
+                /*
+                  Reveal condition shortly
+                  after the AI response.
+                */
+
+                aiResultTimeout =
+                    setTimeout(
+                        () => {
+
+                            aiDemoResult.style.display =
+                                "grid";
 
 
-        }, 5000);
+                            requestAnimationFrame(
+                                () => {
 
+                                    aiDemoResult.classList.add(
+                                        "visible"
+                                    );
+
+                                }
+                            );
+
+                        },
+                        650
+                    );
+
+            },
+            5000
+        );
 }
 
 
-if (aiDemo) {
+/* =========================================
+   START DEMO ONLY WHEN CLICKED
+========================================= */
 
-    const aiDemoObserver =
-        new IntersectionObserver(
+function startAiDemo() {
 
-            (entries, observer) => {
-
-                entries.forEach((entry) => {
-
-                    if (
-                        entry.isIntersecting &&
-                        !aiDemoStarted
-                    ) {
-
-                        aiDemoStarted =
-                            true;
+    if (
+        aiDemoStarted
+    ) {
+        return;
+    }
 
 
-                        showAiCondition(
-                            randomlyAssignAiCondition()
-                        );
+    aiDemoStarted =
+        true;
 
 
-                        observer.unobserve(
-                            entry.target
-                        );
+    /*
+      Visually mark the call-to-action
+      as having been activated.
+    */
 
-                    }
+    if (aiDemoStart) {
 
-                });
-
-            },
-
-            {
-                threshold: 0.35
-            }
-
+        aiDemoStart.classList.add(
+            "started"
         );
 
+        aiDemoStart.disabled =
+            true;
 
-    aiDemoObserver.observe(
-        aiDemo
+    }
+
+
+    if (
+        aiDemoStartTitle
+    ) {
+
+        aiDemoStartTitle.textContent =
+            "Experiment running...";
+
+    }
+
+
+    if (
+        aiDemoStartDescription
+    ) {
+
+        aiDemoStartDescription.textContent =
+            "The AI is responding to the participant’s disagreement.";
+
+    }
+
+
+    if (
+        aiDemoStartArrow
+    ) {
+
+        aiDemoStartArrow.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    /*
+      Randomly assign the visitor to
+      one of the two experimental
+      conditions and begin the demo.
+    */
+
+    showAiCondition(
+        randomlyAssignAiCondition()
+    );
+}
+
+
+if (
+    aiDemoStart
+) {
+
+    aiDemoStart.addEventListener(
+        "click",
+        startAiDemo
     );
 
 }
 
 
-if (aiDemoSwitch) {
+/* =========================================
+   TRY OTHER CONDITION
+========================================= */
+
+if (
+    aiDemoSwitch
+) {
 
     aiDemoSwitch.addEventListener(
         "click",
         () => {
 
             const otherCondition =
-                currentAiCondition === "support"
+                currentAiCondition ===
+                "support"
                     ? "partner"
                     : "support";
 
@@ -670,25 +759,29 @@ if (aiDemoSwitch) {
 }
 
 
-
 /* =========================================
    FAKE CHATBOX POPUP
 ========================================= */
 
 const fakeChatInput =
-    document.getElementById("fake-chat-input");
-
+    document.getElementById(
+        "fake-chat-input"
+    );
 
 const fakeChatSend =
-    document.getElementById("fake-chat-send");
-
+    document.getElementById(
+        "fake-chat-send"
+    );
 
 const fakeChatPopup =
-    document.getElementById("fake-chat-popup");
-
+    document.getElementById(
+        "fake-chat-popup"
+    );
 
 const fakeChatPopupButton =
-    document.getElementById("fake-chat-popup-button");
+    document.getElementById(
+        "fake-chat-popup-button"
+    );
 
 
 function openFakeChatPopup() {
@@ -707,7 +800,6 @@ function openFakeChatPopup() {
         "aria-hidden",
         "false"
     );
-
 }
 
 
@@ -727,7 +819,6 @@ function closeFakeChatPopup() {
         "aria-hidden",
         "true"
     );
-
 }
 
 
@@ -761,50 +852,54 @@ if (fakeChatPopupButton) {
 }
 
 
-
 /* =========================================
    SCROLL REVEALS
 ========================================= */
 
 const revealElements =
-    document.querySelectorAll(".reveal");
+    document.querySelectorAll(
+        ".reveal"
+    );
 
 
 const revealObserver =
     new IntersectionObserver(
-
         (entries) => {
 
-            entries.forEach((entry) => {
+            entries.forEach(
+                (entry) => {
 
-                if (entry.isIntersecting) {
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                    entry.target.classList.add(
-                        "visible"
-                    );
+                        entry.target.classList.add(
+                            "visible"
+                        );
 
 
-                    revealObserver.unobserve(
-                        entry.target
-                    );
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
         },
-
         {
             threshold: 0.12
         }
-
     );
 
 
-revealElements.forEach((element) => {
+revealElements.forEach(
+    (element) => {
 
-    revealObserver.observe(
-        element
-    );
+        revealObserver.observe(
+            element
+        );
 
-});
+    }
+);
