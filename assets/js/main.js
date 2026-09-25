@@ -165,18 +165,121 @@ function changeStimulus(button) {
             newCaption;
 
 
-        stimulusImage.onload = () => {
+        if (stimulusImage.complete) {
 
             stimulusImage.classList.remove(
                 "changing"
             );
 
-        };
+        } else {
+
+            stimulusImage.onload = () => {
+
+                stimulusImage.classList.remove(
+                    "changing"
+                );
+
+            };
+
+        }
 
     }, 200);
 
 }
 
+
+
+/* =========================================
+   ALL THREE CONDITIONS EASTER EGG
+========================================= */
+
+const stimulusEasterEgg =
+    document.getElementById("stimulus-easter-egg");
+
+
+/*
+  Condition 01 is already visible when the
+  page loads, so count it as viewed from
+  the beginning.
+*/
+
+const viewedStimulusConditions =
+    new Set(["wall"]);
+
+
+let stimulusEasterEggFound =
+    false;
+
+
+function recordStimulusCondition(button) {
+
+    if (
+        !button ||
+        stimulusEasterEggFound
+    ) {
+        return;
+    }
+
+
+    const condition =
+        button.dataset.condition;
+
+
+    if (!condition) {
+        return;
+    }
+
+
+    viewedStimulusConditions.add(
+        condition
+    );
+
+
+    /*
+      Because condition 01 starts as viewed,
+      the visitor only needs to explore
+      conditions 02 and 03.
+    */
+
+    if (
+        viewedStimulusConditions.has("wall") &&
+        viewedStimulusConditions.has("overlap") &&
+        viewedStimulusConditions.has("mask") &&
+        stimulusEasterEgg
+    ) {
+
+        stimulusEasterEggFound =
+            true;
+
+
+        stimulusEasterEgg.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        requestAnimationFrame(() => {
+
+            stimulusEasterEgg.classList.add(
+                "visible"
+            );
+
+        });
+
+    }
+
+}
+
+
+
+/*
+  Hovering over conditions 02 or 03 changes
+  the displayed stimulus and counts that
+  condition as viewed.
+
+  Hovering over 01 also works normally,
+  although 01 already counts as viewed.
+*/
 
 stimulusButtons.forEach((button) => {
 
@@ -186,9 +289,15 @@ stimulusButtons.forEach((button) => {
 
             changeStimulus(button);
 
+            recordStimulusCondition(button);
+
         }
     );
 
+
+    /*
+      Keep click support for touchscreens.
+    */
 
     button.addEventListener(
         "click",
@@ -196,10 +305,116 @@ stimulusButtons.forEach((button) => {
 
             changeStimulus(button);
 
+            recordStimulusCondition(button);
+
         }
     );
 
 });
+
+
+
+/* =========================================
+   DERIVATIVE INDIVIDUAL EASTER EGG
+========================================= */
+
+const derivativeIndividualTrigger =
+    document.getElementById(
+        "derivative-individual-trigger"
+    );
+
+
+const derivativePopup =
+    document.getElementById(
+        "derivative-popup"
+    );
+
+
+const derivativePopupButton =
+    document.getElementById(
+        "derivative-popup-button"
+    );
+
+
+/*
+  The shadow itself is controlled entirely
+  by CSS hover.
+
+  Clicking the phrase opens the popup.
+*/
+
+function openDerivativePopup() {
+
+    if (!derivativePopup) {
+        return;
+    }
+
+
+    derivativePopup.classList.add(
+        "visible"
+    );
+
+
+    derivativePopup.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    if (derivativePopupButton) {
+
+        derivativePopupButton.focus();
+
+    }
+
+}
+
+
+function closeDerivativePopup() {
+
+    if (!derivativePopup) {
+        return;
+    }
+
+
+    derivativePopup.classList.remove(
+        "visible"
+    );
+
+
+    derivativePopup.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    if (derivativeIndividualTrigger) {
+
+        derivativeIndividualTrigger.focus();
+
+    }
+
+}
+
+
+if (derivativeIndividualTrigger) {
+
+    derivativeIndividualTrigger.addEventListener(
+        "click",
+        openDerivativePopup
+    );
+
+}
+
+
+if (derivativePopupButton) {
+
+    derivativePopupButton.addEventListener(
+        "click",
+        closeDerivativePopup
+    );
+
+}
 
 
 
@@ -272,10 +487,6 @@ let aiResultTimeout =
     null;
 
 
-/*
-  Randomly assign the initial condition.
-*/
-
 function randomlyAssignAiCondition() {
 
     return Math.random() < 0.5
@@ -284,10 +495,6 @@ function randomlyAssignAiCondition() {
 
 }
 
-
-/*
-  Display one experimental condition.
-*/
 
 function showAiCondition(condition) {
 
@@ -315,10 +522,6 @@ function showAiCondition(condition) {
     );
 
 
-    /*
-      Reset the previous response.
-    */
-
     aiDemoResponse.classList.remove(
         "visible"
     );
@@ -337,39 +540,22 @@ function showAiCondition(condition) {
         "none";
 
 
-    /*
-      Show the animated typing indicator.
-    */
-
     aiDemoTyping.style.display =
         "flex";
 
-
-    /*
-      Keep the typing indicator visible
-      for five seconds.
-    */
 
     aiDemoTimeout =
         setTimeout(() => {
 
             const selectedCondition =
                 aiDemoConditions[
-                currentAiCondition
+                    currentAiCondition
                 ];
 
-
-            /*
-              Remove the typing indicator.
-            */
 
             aiDemoTyping.style.display =
                 "none";
 
-
-            /*
-              Insert the assigned AI response.
-            */
 
             aiDemoResponse.textContent =
                 selectedCondition.response;
@@ -378,10 +564,6 @@ function showAiCondition(condition) {
             aiDemoCondition.textContent =
                 selectedCondition.label;
 
-
-            /*
-              Reveal the AI response.
-            */
 
             aiDemoResponse.style.display =
                 "block";
@@ -395,12 +577,6 @@ function showAiCondition(condition) {
 
             });
 
-
-            /*
-              Reveal the assigned experimental
-              condition shortly after the
-              response appears.
-            */
 
             aiResultTimeout =
                 setTimeout(() => {
@@ -424,11 +600,6 @@ function showAiCondition(condition) {
 
 }
 
-
-/*
-  Start the demonstration when the
-  demo enters the viewport.
-*/
 
 if (aiDemo) {
 
@@ -477,12 +648,6 @@ if (aiDemo) {
 }
 
 
-/*
-  After the randomly assigned condition
-  has been shown, allow the visitor to
-  inspect the alternative condition.
-*/
-
 if (aiDemoSwitch) {
 
     aiDemoSwitch.addEventListener(
@@ -504,6 +669,8 @@ if (aiDemoSwitch) {
 
 }
 
+
+
 /* =========================================
    FAKE CHATBOX POPUP
 ========================================= */
@@ -511,11 +678,14 @@ if (aiDemoSwitch) {
 const fakeChatInput =
     document.getElementById("fake-chat-input");
 
+
 const fakeChatSend =
     document.getElementById("fake-chat-send");
 
+
 const fakeChatPopup =
     document.getElementById("fake-chat-popup");
+
 
 const fakeChatPopupButton =
     document.getElementById("fake-chat-popup-button");
@@ -527,9 +697,11 @@ function openFakeChatPopup() {
         return;
     }
 
+
     fakeChatPopup.classList.add(
         "visible"
     );
+
 
     fakeChatPopup.setAttribute(
         "aria-hidden",
@@ -545,9 +717,11 @@ function closeFakeChatPopup() {
         return;
     }
 
+
     fakeChatPopup.classList.remove(
         "visible"
     );
+
 
     fakeChatPopup.setAttribute(
         "aria-hidden",
@@ -577,11 +751,6 @@ if (fakeChatSend) {
 }
 
 
-/*
-  The "Fair enough" button is deliberately
-  the only way to close the popup.
-*/
-
 if (fakeChatPopupButton) {
 
     fakeChatPopupButton.addEventListener(
@@ -590,6 +759,7 @@ if (fakeChatPopupButton) {
     );
 
 }
+
 
 
 /* =========================================

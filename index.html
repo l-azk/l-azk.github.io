@@ -85,8 +85,8 @@ title:
 
 
     <!-- =========================
-       SHADOWS & OBJECTHOOD
-  ========================== -->
+         SHADOWS & OBJECTHOOD
+    ========================== -->
 
     <article class="project shadow-project reveal">
 
@@ -138,7 +138,14 @@ title:
                         between a shadow and its casting object as if the usual boundary between
                         separate objects is absent, even when the shadow is distorted or physically
                         separated from its object. We suggest that shadows may therefore be
-                        <em>derivative individuals</em>: distinct from their casting objects, but
+                        <button class="derivative-individual-trigger" id="derivative-individual-trigger" type="button"
+                            aria-label="Derivative individuals">
+                            <span class="derivative-individual-shadow" aria-hidden="true">
+                                derivative individuals
+                            </span>
+
+                            <em>derivative individuals</em>
+                        </button>: distinct from their casting objects, but
                         nevertheless bound together with them in visual processing.
                     </p>
 
@@ -171,7 +178,7 @@ title:
 
         <div class="stimulus-selector">
 
-            <button class="stimulus-button active"
+            <button class="stimulus-button active" data-condition="wall"
                 data-image="{{ '/assets/images/LeftRotatedCylinderOSC.png' | relative_url }}"
                 data-caption="Shadow projected on wall">
                 <span>01</span>
@@ -179,18 +186,29 @@ title:
             </button>
 
 
-            <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderSOS.png' | relative_url }}"
+            <button class="stimulus-button" data-condition="overlap"
+                data-image="{{ '/assets/images/LeftCylinderSOS.png' | relative_url }}"
                 data-caption="Two overlapping shadows">
                 <span>02</span>
                 Two Overlapping Shadows
             </button>
 
 
-            <button class="stimulus-button" data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}"
-                data-caption="Mask control">
+            <button class="stimulus-button" data-condition="mask"
+                data-image="{{ '/assets/images/LeftCylinderMO.png' | relative_url }}" data-caption="Mask control">
                 <span>03</span>
                 Mask Control
             </button>
+
+        </div>
+
+
+        <div class="stimulus-easter-egg" id="stimulus-easter-egg" aria-hidden="true">
+
+            <p class="stimulus-easter-egg-text">
+                <strong>You looked at every condition.</strong>
+                Maybe now you're thinking about shadows too...
+            </p>
 
         </div>
 
@@ -199,8 +217,30 @@ title:
 
 
     <!-- =========================
-       AI & ROMANTIC RELATIONSHIPS
-  ========================== -->
+         DERIVATIVE INDIVIDUAL POPUP
+    ========================== -->
+
+    <div class="derivative-popup" id="derivative-popup" aria-hidden="true">
+
+        <div class="derivative-popup-card" role="dialog" aria-modal="true" aria-labelledby="derivative-popup-title">
+
+            <p class="derivative-popup-title" id="derivative-popup-title">
+                You found the derivative individual...
+            </p>
+
+            <button class="derivative-popup-button" id="derivative-popup-button" type="button">
+                I see.
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         AI & ROMANTIC RELATIONSHIPS
+    ========================== -->
 
     <article class="project text-project reveal">
 
@@ -260,9 +300,10 @@ title:
 
     </article>
 
+
     <!-- =========================
-     COUPLE CONFLICT DEMO
-========================== -->
+         COUPLE CONFLICT DEMO
+    ========================== -->
 
     <div class="ai-demo reveal" id="ai-demo">
 
@@ -399,9 +440,11 @@ title:
 
     </div>
 
+
+
     <!-- =========================
-       AI & APOLOGIES
-  ========================== -->
+         AI & APOLOGIES
+    ========================== -->
 
     <article class="project text-project reveal">
 
@@ -463,8 +506,8 @@ title:
 
 
     <!-- =========================
-       SEEING CORRELATION
-  ========================== -->
+         SEEING CORRELATION
+    ========================== -->
 
     <article class="project text-project reveal">
 
@@ -480,7 +523,7 @@ title:
         <div class="text-project-title">
 
             <p class="project-label">
-                Visual cognition · Information perception
+                Visual cognition · Correlation perception
             </p>
 
             <h3>Seeing Correlation</h3>
